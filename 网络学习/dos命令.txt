@@ -1,0 +1,36 @@
+cls	#清屏
+dir	#显示磁盘目录
+copy c:\test.txt d:\
+copy con c:\new.txt	      #产生一个文件 开始多行编辑内容 ctrl+z回车结束编写
+move c:\test.txt d:\
+md c:\111\test	      #建立子目录 若写md c:\test.txt 则创建一个名为test.txt的文件夹
+del c:\test.txt
+rd c:\111\text	      #删除子目录 不能是文件
+type c:\test.txt	      #显示文件内容
+ren c:\test.txt tt.txt	      #rename 重命名文件
+edit c:\text.txt	      #编辑ascii文件内容，也可以建立一个文件，可编辑.bat或.bas的格式
+deltree 		      #删除文件夹和它下面是所有子文件文件夹
+attrib +h +s +a test
+   参数：
+           +h 隐藏     -h 取消隐藏
+           +s 将此文件夹提升为受保护的系统级的文件夹       -s 。。。
+           +a 只读     -a 。。。
+
+shutdown -s -t 100	      #100s后关机
+shutdown -s -f -t 100    #100s后强制关机
+shutdown -r -f -t 100    #100s后强制重启
+shutdown -a	      #取消定时关机或重启
+shutdown -l	      #注销
+shutdown -s -f -t 100 -c "需要显示的文字"
+
+# txt文件当做exe打开
+assoc .txt=exefile		#同理 assoc .exe=txtfile
+
+#快速生成一个1G空文件：
+fsutil file createnew c:\windows\system.ini 1024000000	
+
+ping
+ipconfig
+nslookup	www.baidu.com	#查看百度服务器地址
+
+

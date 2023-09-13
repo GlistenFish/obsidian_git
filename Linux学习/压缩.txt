@@ -1,0 +1,16 @@
+gzip 文件名		#gzip压缩
+gunzip 文件名		#gzip解压缩
+bzip2 文件名		#bzip2压缩
+bunzip2 文件名		#bzip2解压缩
+
+对目录进行打包压缩：
+tar -cf  /tmp/test.tar /tmp/test		#先打包
+gzip test.tar			#再压缩
+解压：
+gunzip test.tar.gz
+tar -xf test.tar
+tar -xf test.tar -C /home		#可加C解压到指定目录
+tar -xf test.tar.xz
+直接一次性压缩解压缩：
+tar -zcf /tmp/test.tar.gz test
+tar -zxf test.tar.gz

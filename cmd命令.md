@@ -1,0 +1,30 @@
+net user Smith ******		      							#更改用户Smith的密码
+net user Smith ****** /add		      	  			#新建一个用户Smith，密码为******
+net user Smith /del			      		 			#删除用户Smith
+net user Smith /active:yes/no		      	   #激活或禁用用户Smith
+net localgroup			      							 #列出所有的组
+net localgroup administrators		      	 #查看administrators组
+net localgroup CEO /add		      			   #建立CEO组
+net localgroup CEO /add		      			   #删除CEO组
+net localgroup administrators Smith /add    	#将Smith添加到administrators组
+net localgroup administrators Smith /del     	#将Smith从administrators组移除
+
+netstat -an													#查看你本地的所有开放的端口
+	：telnet: 23
+	   远程桌面协议RDP：3389
+net share														#列出共享的文件夹
+net share 共享名 /del									#取消该文件夹的共享
+net share 想设的共享名=共享文件路径		#共享该文件夹
+
+ipconfig
+ipconfig /all
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns											#清除本地dns解析缓存
+ipconfig /displaydns										#查看缓存
+
+tracert www.baidu.com								#跟踪到达baidu的跳跃点
+
+arp -a					#查看ARP缓存
+arp -d					#清除ARP缓存
+arp -s					#ARP绑定

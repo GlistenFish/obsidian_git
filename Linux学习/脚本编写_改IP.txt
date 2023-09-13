@@ -1,0 +1,53 @@
+建立set_ip.sh文件
+
+#!/bin/bash
+cd /etc/sysconfig/network-scripts/
+echo "TYPE=Ethernet" > ifcfg-ens33
+echo "PROXY_METHOD=none" >> ifcfg-ens33
+echo "BROWSER_ONLY=no" >> ifcfg-ens33
+echo "BOOTPROTO=static" >> ifcfg-ens33
+echo "DEFROUTE=yes" >> ifcfg-ens33
+echo "IPV4_FAILURE_FATAL=no" >> ifcfg-ens33
+echo "IPV6INIT=yes" >> ifcfg-ens33
+echo "IPV6_AUTOCONF=yes" >> ifcfg-ens33
+echo "IPV6_DEFROUTE=yes" >> ifcfg-ens33
+echo "IPV6_FAILURE_FATAL=no" >> ifcfg-ens33
+echo "NAME=ens33" >> ifcfg-ens33
+echo "UUID=4308a5c1-571d-45a4-82b5-8df5e6143b3a" >> ifcfg-ens33
+echo "DEVICE=ens33" >> ifcfg-ens33
+echo "ONBOOT=yes" >> ifcfg-ens33
+echo ""
+echo "IPADDR=192.168.1.43" >> ifcfg-ens33
+echo "NETMASK=255.255.255.0" >> ifcfg-ens33
+echo "GATEWAY=192.168.1.1" >> ifcfg-ens33
+
+ifdown ens33
+ifup ens33
+===============================================================
+交互式修改
+#!/bin/bash
+read -p "please input ipaddr:" IP
+read =p "please input netmask:" MASK
+read -p "please input gateway:" WAY
+cd /etc/sysconfig/network-scripts/
+echo "TYPE=Ethernet" > ifcfg-ens33
+echo "PROXY_METHOD=none" >> ifcfg-ens33
+echo "BROWSER_ONLY=no" >> ifcfg-ens33
+echo "BOOTPROTO=static" >> ifcfg-ens33
+echo "DEFROUTE=yes" >> ifcfg-ens33
+echo "IPV4_FAILURE_FATAL=no" >> ifcfg-ens33
+echo "IPV6INIT=yes" >> ifcfg-ens33
+echo "IPV6_AUTOCONF=yes" >> ifcfg-ens33
+echo "IPV6_DEFROUTE=yes" >> ifcfg-ens33
+echo "IPV6_FAILURE_FATAL=no" >> ifcfg-ens33
+echo "NAME=ens33" >> ifcfg-ens33
+echo "UUID=4308a5c1-571d-45a4-82b5-8df5e6143b3a" >> ifcfg-ens33
+echo "DEVICE=ens33" >> ifcfg-ens33
+echo "ONBOOT=yes" >> ifcfg-ens33
+echo ""
+echo "IPADDR=$IP" >> ifcfg-ens33
+echo "NETMASK=$MASK" >> ifcfg-ens33
+echo "GATEWAY=$WAY" >> ifcfg-ens33
+
+ifdown ens33
+ifup ens33

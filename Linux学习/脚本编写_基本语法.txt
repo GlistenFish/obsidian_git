@@ -1,0 +1,58 @@
+if====================================
+if [ command ] ; then
+	...
+elif [ command] ; then
+	...
+else
+	...
+fi
+#大于：-gt
+#等于：-eq
+#小于：-lt
+#例 ：if [ 3 -lt 5 ] ; then
+=====================================
+
+for while===============================
+for i in {1..10};do
+	echo "hello $i"
+done
+####
+i=0
+while [ $i -lt  10 ];do
+        let i++
+        echo "hello $i"
+done
+=====================================
+
+case==================================
+case $1 in
+centos)
+        echo "redhat"
+;;
+redhat)
+        echo "centos"
+;;
+*)
+        echo "usage case.sh {redhat|centos}"
+esac
+===================
+#用上函数
+redhat(){
+        echo centos
+        return 0
+}
+centos(){
+        echo redhat
+        return 0
+}
+case $1 in
+centos)
+        centos
+;;
+redhat)
+        redhat
+;;
+*)
+        echo "usage case.sh {redhat|centos}"
+esac
+================================

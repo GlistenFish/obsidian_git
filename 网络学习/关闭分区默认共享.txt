@@ -1,0 +1,17 @@
+关闭分区默认共享(如C$、D$、E$ ……)
+    1. 点击“开始”菜单→“运行”，在弹出的“运行”对话框中输入“regedit”后回车，打开注册表编辑器
+    2. 展开“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Lanmanserver\parameters”注册表项
+    3. 双击右窗格中的“AutoShareServer”，将它的键值改为“0”即可。
+ 
+关闭管理默认共享(ADMIN$)
+    1. 点击“开始”菜单→“运行”，在弹出的“运行”对话框中输入“regedit”后回车，打开注册表编辑器
+    2. 展开“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Lanmanserver\parameters”注册表项
+    3. 双击右窗格中的“AutoShareWks”，将它的键值改为“0”即可
+ 
+关闭IPC$默认共享
+    1. 点击“开始”菜单→“运行”，在弹出的“运行”对话框中输入“regedit”后回车，打开注册表编辑器
+    2. 展开“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa”注册表项
+    3. 双击“restrictanonymous”，将其键值设为“1”即可(注意，不是“0”，是“1”)
+-----------------------------------
+修改注册表清除系统默认共享
+https://blog.51cto.com/netlin/25707

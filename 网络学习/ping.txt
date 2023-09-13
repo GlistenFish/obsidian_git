@@ -1,0 +1,4 @@
+ping  目标IP地址	    # 测试网络连通性
+ping -t  目标IP地址	    # 一直ping
+ping -n  数字  IP地址     # 修改ping包的数量
+ping -l  数字  IP地址      # 修改ping包大小

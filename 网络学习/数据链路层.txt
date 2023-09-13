@@ -1,0 +1,129 @@
+﻿数据链路层(2层  Data Link Layer)
+
+1.属于2层
+
+2.传输单元：帧
+
+3.帧结构：见图片
+   帧头：6+6+2=14字节
+   MTU值：1500字节
+   帧尾：4字节
+
+   帧头内容：目标MAC、源MAC、类型
+   类型的作用：识别上层协议
+   0x0800：上层为IP协议
+   0x0806：上层为ARP协议
+
+4.交换机端口：
+  Ethernet		  10Mb		十兆
+  Fastethernet	  100Mb		百兆
+  GigabitEthernet	  1000Mb		千兆
+  TenGigabitEthernet  10000Mb	万兆
+
+5.交换机工作原理：
+  受到一个数据帧后：
+  首先学习帧中的源MAC地址来形成MAC地址表
+  然后检查帧中的目标MAC地址，并匹配MAC地址表：
+         如表中有匹配项，则单播转发
+         如表中唔匹配项，则除接受端口外广播转发
+  MAC地址表的老化时间默认为300秒
+
+6.端口状态：up/down
+  down的三种可能：
+  1)人工down掉
+  2)速率不匹配
+  3)双工模式不匹配(双工duplex)
+	双工模式：单工、半双工、全双工
+
+7.交换机基本工作模式及命令
+  第一次配置网络设备，需要使用console线
+  在PC需要使用“超级终端”或者其他软件
+  1)用户模式：
+   switch>
+   可以查看交换机的基本简单信息，且不能做任何修改配置！
+  2)特权模式：
+   switch> enable
+   switch#
+   可以查看所有配置，不能保存修改配置！
+   但可以做测试、保存、初始化等操作
+  3) 全局配置模式：
+   switch# configure terminal
+   switch(config)#
+   默认不能查看配置！
+   可以修改配置，且全局生效！
+  4)接口配置模式：
+   switch(config)# interface f0/1
+   switch(config-if)#  
+  5) console口/线/控制台模式：
+   switch(config)# line console 0
+   默认不能查看配置！
+   可以修改配置，且对console口生效！
+
+8.exit返回上一级模式
+   end直接退到特权模式
+
+9.支持命令缩写
+10. ?的用法
+11.tab键补全键
+12.配置主机名：
+  conf t		#全局配置
+  hostname 设备名
+13.设置用户密码：
+  line co 0
+  password 123456
+  login
+  exit
+
+  enable
+  password 123456
+  end
+
+14.保存配置：
+  enable
+  copy running-config startup-config
+  或
+  write  (此命令并非所有品牌交换机都可行)
+
+15.重启：
+  enable
+  reload
+
+16.配置特权密码：
+  configure terminal
+  enabel password 123456  (明文)
+  enable secret 123456  (密文)
+  设置了密文之后明文会失效
+
+17.初始化：
+    即清除startup-config文件
+  erase startup-config
+
+18.查看MAC地址表：
+  en
+  show mac-address-table
+
+19.查看接口状态列表：
+  show ip int brief
+  show ip int b
+
+20.手工关闭接口:
+  int f0/1
+  shutdown
+  exit
+
+21.打开接口：
+  no shutdown
+
+22.在非特权模式下使用特权命令(查看某某状态)：
+  在命令前加do
+  do show running-config
+  do wr
+  do reload
+    ps: do 模式下无法补全命令
+
+23.删除配置：
+  在什么模式下配置就在该模式下删
+  命令前加no空格
+  类似删除password等  no hostname
+
+24.

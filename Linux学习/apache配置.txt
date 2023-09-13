@@ -1,0 +1,25 @@
+web服务
+http
+lamp平台
+linux  apache  mysql  php
+发帖留言 提交 php把你的发言 提交 数据中
+php登录数据调用你所有的留言 将你的留言生成html语句 显示到主页上
+
+对外服务
+IP地址 端口号80 443
+1.启动服务
+	systemctl start httpd.service 	#启动
+	systemctl stop httpd.service 	#停止
+	systemctl restart httpd.service 	#重启
+2.验证
+	ss -antpl | grep 80
+3.主页建立
+	vim /var/www/html/index.html
+    3.5关闭防火墙
+	systemctl status firewalld.service		#查看状态
+	systemctl start firewalld.service		#打开防火墙
+	systemctl stop firewalld.service		#关闭防火墙
+	systemctl enable firewalld.service		#开启防火墙
+	systemctl disable firewalld.service		#禁用防火墙
+4.主配置文件分析
+	/etc/httpd/conf/httpd.conf

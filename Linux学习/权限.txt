@@ -1,0 +1,50 @@
+ls -l test.txt			#查看test.txt的权限
+ls -ld testdir			#查看testdir目录的权限
+
+-rw-r--r--. 1 root root 0 Feb 12 11:11 test.txt		#两个root分别为所属者和所属组
+drwxr-xr-x. 2 root root 6 Feb 12 11:11 testdir
+
+-    rw-    r--    r--   .
+d   rwx    r-x    r-x   .
+字段1：文件类型   -普通文件   d目录   l符号链接   b块设备
+字段2：文件所属者对该文件的权限
+	r ：read
+	w：write
+	x：可执行权限/可以进入目录
+字段3：文件所属组的权限
+字段4：其他用户的权限
+
+chmod   对象  算数运算符  权限  文件
+对象：u（所属者）  g（所属组）  o（其他用户）  a（all）
+算数运算符： -  +  =
+权限：r w x
+for example     chmod o-r test.txt
+          or            chmod 774 test.txt
+chown  用户  文件
+chgrp  组  文件
+
+粘滞位  sgid suid权限：
+
+粘滞位针对目录赋权，目录中创建的文件只有建立者可以删除
+chmod o+t test
+sgid针对目录建立的权限，在该目录中建立的文件所属组继承父目录的属组
+chmod g+s test
+suid对可执行文件建立
+谁运行该文件，具有该文件所属者的权限（详见视频3.1.3）
+chmod u+s /usr/bin/vim
+
+
+不再允许添加新用户的请求：
+    原理：
+        添加新用户的过程：
+               /etc/group
+               /etc/passwd
+               /etc/shadow
+               /home/xxx
+         将passwd和shadow文件添加不可更改属性
+    chattr  +i  /etc/passwd  /etc/shadow
+
+rwxr-xr-x
+755
+目录的最高权限0777-0022=0755
+文件666-022=644
