@@ -164,4 +164,146 @@ func main() {
 结果是4
 因为 iota 可以认为是行索引，BLUE是4，GREEN是3
 
-### 
+## 面向对象
+
+```go
+package main
+
+import (
+    "crypto/md5"
+    "crypto/sha256"
+    "crypto/sha512"
+    "fmt"
+)
+
+// 面向过程
+
+//func MD5(str string) string {
+//  return fmt.Sprintf("%x", md5.Sum([]byte(str)))
+//}
+//
+//func SHA256(str string) string {
+//  h := sha256.New()
+//  h.Write([]byte(str))
+//  bs := h.Sum(nil)
+//  // 函数作用是江十六进制bs变量转换成字符串
+//  return fmt.Sprintf("%x", bs)
+//}
+//
+//func SHA512(str string) string {
+//  h := sha512.New()
+//  h.Write([]byte(str))
+//  bs := h.Sum(nil)
+//  return fmt.Sprintf("%x", bs)
+//}
+//
+//func main() {
+//  fmt.Println(MD5("123456"))
+//  fmt.Println(SHA256("123456"))
+//  fmt.Println(SHA512("123456"))
+//}
+
+// 面向对象
+
+type Hash struct {
+    Str string
+}
+
+func (hash Hash) MD5() string {
+    return fmt.Sprintf("%x", md5.Sum([]byte(hash.Str)))
+}
+
+func (hash Hash) SHA256() string {
+    h := sha256.New()
+    h.Write([]byte(hash.Str))
+    bs := h.Sum(nil)
+
+    return fmt.Sprintf("%x", bs)
+}
+
+func (hash Hash) SHA512() string {
+    h := sha512.New()
+    h.Write([]byte(hash.Str))
+    bs := h.Sum(nil)
+
+    return fmt.Sprintf("%x", bs)
+}
+
+func main() {
+    hash := Hash{Str: "123456"}
+    fmt.Println(hash.MD5())
+    fmt.Println(hash.SHA256())
+    fmt.Println(hash.SHA512())
+}
+```
+
+
+
+Go语言的协程是一种轻量级的线程，不需要操作系统抢占式调度，由Go语言自己的调度器完成协程的调度。协程的作用是实现并发编程，提高程序的性能。
+
+Go语言的协程通过 go 关键字来创建，例如 `go func() `，可以在单独的协程中异步执行函数。通过 `select` 语句可以协程之间进行通信，类似于管道。
+
+协程能够轻松实现高并发，但是也需要注意避免竞态条件等问题。在使用协程时需要对锁、共享变量等进行仔细的设计和管理。
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func worker(count int) {
+    for i := 1; i < count; i++ {
+        time.Sleep(500) // 暂停一秒
+        fmt.Print(" ", i)
+    }
+    fmt.Println()
+}
+
+func main() {
+    // 不使用协程
+    now1 := time.Now()
+    worker(10)
+    worker(10)
+    worker(10)
+    fmt.Println(time.Now().Sub(now1))
+
+    // 开启三个协程同时执行
+    //now2 := time.Now()
+    go worker(10)
+    go worker(10)
+    go worker(10)
+    //now3 := time.Now()
+    time.Sleep(time.Second * 5)
+    //fmt.Println(now3.Sub(now2))
+}
+```
+
+#### 通道
+
+Go语言通道是一种用于在不同`goroutine` 之间传递数据和同步执行的重要机制。它可以使得多个` goroutine` 之间实现高效、安全的通信，并能够防止竞态条件的发生。
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    channel := make(chan string)
+
+    go func() {
+        time.Sleep(3 * time.Second)
+        channel <- "Hello from goroutine!"	//放入通道
+    }()
+
+    fmt.Println("Waiting for channel...")
+    message := <-channel					//从通道中取出
+    fmt.Println(message)
+}
+```
+
+使用通道使得不同的协程之间传递消息变得容易且安全，从而提高了并发程序的效率和可靠性。
