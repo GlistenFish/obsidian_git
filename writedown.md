@@ -64,7 +64,22 @@ fping -gaq 10.1.1.0/24
 ```
 
 #### nmap
+ping扫描
+```
+nmap -sn 10.0.0.0/24
+```
 
+![[Pasted image 20230919161839.png]]
+
+用TCP SYN半开扫描（需要root权限）
+```
+sudo nmap -sS 10.0.0.0/24
+```
+
+TCP CONNEC扫描
+```
+nmap -sT 10.0.0.0/24
+```
 
 ## 端口扫描
 
