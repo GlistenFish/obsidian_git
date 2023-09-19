@@ -93,6 +93,16 @@ sudo namp -p22,80 -A 10.1.1.1
 gobuster dir -u http://10.1.1.1 -w baopo_dir.txt -x txt,php,html,jsp
 ```
 
+#### dirsearch
+
+
+
+
+
+#### feroxbuster
+
+
+
 
 
 ### url参数暴破
