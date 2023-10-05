@@ -69,7 +69,7 @@ ping扫描
 nmap -sn 10.0.0.0/24
 ```
 
-![[Pasted image 20230919161839.png]]
+![image-20221225105024894](./photo/Penetration/00.png)
 
 用TCP SYN半开扫描（需要root权限）
 ```
