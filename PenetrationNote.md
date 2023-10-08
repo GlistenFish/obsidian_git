@@ -128,7 +128,7 @@ gobuster dir -u http://10.1.1.1 -w baopo_dir.txt -x txt,php,html,jsp
 ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-paramenter-names.txt:PARAM -w baopo_dir.txt:VAL -u http://10.1.1.1/tt.php?PARAM=VAL -fs 0
 ```
 
-`-fs`是过滤 0 是空内容
+`-fs`是过滤 `0` 是空内容
 
 
 
