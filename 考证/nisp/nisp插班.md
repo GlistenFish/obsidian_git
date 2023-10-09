@@ -26,7 +26,7 @@
 
 四个大类：DCBA		d  c2,c1  b3,b2,b1 a  c2商用
 
-![操作系统的安全度量标准](C:\Users\kkk\Pictures\Typora_poto\操作系统的安全度量标准.png)
+![操作系统的安全度量标准](C:/Users/kkk/Pictures/Typora_poto/操作系统的安全度量标准.png)
 
 
 
@@ -56,7 +56,7 @@ O：other
 
 # *	
 
-![image-20230108160419350](E:\writedown\photo\nisp\image-20230108160419350.png)
+![image-20230108160419350](E:/writedown/photo/nisp/image-20230108160419350.png)
 
 权限分离原则：
 

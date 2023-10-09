@@ -27,7 +27,7 @@ IATF：深度防御，串行
 	不可否认性：抗抵赖
 	可靠性：保证信息资产在特定条件或特定时间段内的可用性
 
-![image-20221225105024894](..\..\photo\nisp\image-20221225105024894.png)
+![image-20221225105024894](../../photo/nisp/image-20221225105024894.png)
 
 信息安全：保护组织有价值的信息资产（软件、硬件、服务、知识产权、人员等）
 
@@ -76,7 +76,7 @@ IATF：深度防御，串行
 
 
 
-![image-20221225105215281](..\..\photo\nisp\image-20221225105215281.png)
+![image-20221225105215281](../../photo/nisp/image-20221225105215281.png)
 
 安全视角：
 	国家：cyber space security网络空间安全
@@ -132,7 +132,7 @@ PPDR：动态主动防护模型，所有的PDR都是基于policy的
 
 PPDRR：policy, protection, detection, response, recovery
 
-![image-20221225135255277](..\..\photo\nisp\image-20221225135255277.png)
+![image-20221225135255277](../../photo/nisp/image-20221225135255277.png)
 
 
 
@@ -153,7 +153,7 @@ PPDRR：policy, protection, detection, response, recovery
 
 安全属性：CIA（机密性、完整性、可用性）
 
-![image-20221225144720050](..\..\photo\nisp\image-20221225144720050.png)
+![image-20221225144720050](../../photo/nisp/image-20221225144720050.png)
 
 威胁建模：STRIDE
 
@@ -167,7 +167,7 @@ ISST：信息系统安全目标	information system security target
 
 
 
-![image-20221225144749638](..\..\photo\nisp\image-20221225144749638.png)<img src="..\..\photo\nisp\image-20221225144933495.png" alt="image-20221225144933495" style="zoom: 33%;" />
+![image-20221225144749638](../../photo/nisp/image-20221225144749638.png)<img src="../../photo/nisp/image-20221225144933495.png" alt="image-20221225144933495" style="zoom: 33%;" />
 
 
 
@@ -219,7 +219,7 @@ ISST：信息系统安全目标	information system security target
 风险响应
 风险检测
 
-![image-20221225152226094](..\..\photo\nisp\image-20221225152226094.png)
+![image-20221225152226094](../../photo/nisp/image-20221225152226094.png)
 
 
 
@@ -740,7 +740,7 @@ RAID：冗余磁盘阵列
 	灾难恢复策略实现
 	灾难恢复预案的制定和管理
 
-![image-20230114162840873](..\..\photo\nisp\image-20230114162840873.png)
+![image-20230114162840873](../../photo/nisp/image-20230114162840873.png)
 
 
 
@@ -790,7 +790,7 @@ CC标准评估保证级共分为**7个**递增的评估保证等级
 
 IPSec协议包含两种模式：传输模式、隧道模式
 
-![img](..\..\photo\nisp\resize,m_lfit,w_1280,limit_1)
+![img](../../photo/nisp/resize,m_lfit,w_1280,limit_1)
 
 
 
@@ -818,7 +818,7 @@ IPSec协议包含两种模式：传输模式、隧道模式
 
 
 
-![image-20230203204512816](..\..\photo\nisp\image-20230203204512816.png)
+![image-20230203204512816](../../photo/nisp/image-20230203204512816.png)
 
 一级：自主保护级，不需要定级备案
 
@@ -834,7 +834,7 @@ IPSec协议包含两种模式：传输模式、隧道模式
 
 
 
-![image-20230204113553137](..\..\photo\nisp\image-20230204113553137.png)
+![image-20230204113553137](../../photo/nisp/image-20230204113553137.png)
 
 
 
@@ -848,17 +848,17 @@ ACL由 DATA OWNER 管理
 
 Kerberos协议是一种集中访问控制协议，它能在复杂的网络环境中，为用户提供安全的**单点登录**服务，单点登录是指用户在网络中进行一次身份认证，便可以访问其授权的所有网络资源，而不再需要其他的身份认证过程，实质是**安全凭证**在多个应用系统之间的传递或共享。
 
-![image-20230208181245741](..\..\photo\nisp\image-20230208181245741.png)
+![image-20230208181245741](../../photo/nisp/image-20230208181245741.png)
 
 
 
-![image-20230208181428210](..\..\photo\nisp\image-20230208181428210.png)
+![image-20230208181428210](../../photo/nisp/image-20230208181428210.png)
 
 
 
 威胁建模是了解系统面临的安全威胁，确定威胁风险并通过适当的环节措施以降低风险，提高系统安全性的过程。包括：**确定对象**、**识别威胁**、**评估威胁**、**消减威胁**四个步骤。
 
-![image-20230208192207309](..\..\photo\nisp\image-20230208192207309.png)
+![image-20230208192207309](../../photo/nisp/image-20230208192207309.png)
 
 
 
