@@ -224,6 +224,7 @@ apt install seclists
 	$t($_POST['pass']);
 ?>
 ```
+key is 'x'
 
 
 # 杂
