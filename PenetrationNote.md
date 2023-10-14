@@ -147,6 +147,20 @@ ffuf -w /usr/.../burp-paramenter-names.txt -u http://10.1.1.1/secret/tt.php?FUZZ
 测试后发现http://10.1.1.1/secret/index.php?comd=../index.html可以访问到index.html页面，而http://10.1.1.1/secret/tt.php?comd='其他'  和直接访问/secret/tt.php是相同的
 
 
+### 私钥本地爆破
+
+工具：`hashcat`、`john`
+
+john:
+
+```
+#id_rsa文件格式转换
+/usr/share/john/ssh2john.py id_rsa > hash
+
+#使用john爆破
+cd ~
+john hash --wordlist=rockyou.txt
+```
 
 ## 其他
 
