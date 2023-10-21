@@ -205,10 +205,21 @@ ffuf -w /usr/.../burp-paramenter-names.txt -u http://10.1.1.1/secret/tt.php?FUZZ
 # Response
   HTTP/1.1 403 Forbidden
 
-绕
+绕：
+# Request
+  GET / HTTP/1.1
+  Referer: http://xxx.abc.com/login
+# Response
+  HTTP/1.1 200 OK
 ```
 
 #### 各种X头绕过
+
+```
+X-Originating-IP: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Frowarded-For: 127.0.0.1
+```
 
 
 ## 其他
