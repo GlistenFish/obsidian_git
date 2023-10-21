@@ -218,7 +218,7 @@ ffuf -w /usr/.../burp-paramenter-names.txt -u http://10.1.1.1/secret/tt.php?FUZZ
 ```
 X-Originating-IP: 127.0.0.1
 X-Remote-IP: 127.0.0.1
-X-Frowarded-For: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
 ```
 
 
