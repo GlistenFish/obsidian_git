@@ -207,7 +207,7 @@ ffuf -w /usr/.../burp-paramenter-names.txt -u http://10.1.1.1/secret/tt.php?FUZZ
 
 绕：
 # Request
-  GET / HTTP/1.1
+  GET /auth/login HTTP/1.1
   Referer: http://xxx.abc.com/login
 # Response
   HTTP/1.1 200 OK
