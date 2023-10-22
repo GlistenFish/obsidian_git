@@ -334,7 +334,9 @@ steghide info king
 
 ![[photo/Pasted image 20231022204348.png]]
 
-分析出 king 这个
+分析出 king 这个图片中除了含有jpeg的数据外还有zip的数据，中有个名字是user的文件
+
+用 `binwalk -e king` 可以提取
 
 # 杂
 
