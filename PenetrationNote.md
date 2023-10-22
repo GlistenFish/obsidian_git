@@ -318,8 +318,23 @@ john hash_aa --wordlist=rockyou.txt
 
 #### 隐写内容提取&二进制文件提取
 
+比如一张图片king中隐写有隐藏信息
+
+利用steghide
+```
+steghide info king
+```
+
+有些可能还要密码
 
 
+2.使用 binwalk 进行二进制文件分析
+
+比如：
+
+![[photo/Pasted image 20231022204348.png]]
+
+分析出 king 这个
 
 # 杂
 
