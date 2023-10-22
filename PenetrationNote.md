@@ -300,6 +300,26 @@ apt install seclists
 ```
 key is 'x'
 
+#### zip密码破解
+
+用john
+
+先将zip转化成 john 可用的hash文件
+
+```
+zip2john aa.zip > hash_aa
+```
+
+然后
+
+```
+john hash_aa --wordlist=rockyou.txt
+```
+
+#### 隐写内容提取&二进制文件提取
+
+
+
 
 # 杂
 
@@ -321,5 +341,10 @@ file_include传马
 
 
 
+文件头是 `PK` 的多半是package文件，压缩文件
+
+![[photo/Pasted image 20231022203311.png]]
+
+![[photo/Pasted image 20231022203342.png]]
 
 
