@@ -265,6 +265,19 @@ key is 'x'
 
 
 
+#### Capabilities权限
+
+[Capabilities每个权限详细作用](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+
+`setcap`设置Capabilities权限
+`getcap`查看Capabilities权限
+
+```
+getcap -r / 2>/dev/null
+```
+从根目录下递归查询Capabilities权限
+
+
 # 杂
 
 **$1$** is MD5
