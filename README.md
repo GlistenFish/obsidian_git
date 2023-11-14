@@ -1,2 +1,2 @@
 # obsidian_git
-This is my personal notes documents
+This is my personal notes documents.
