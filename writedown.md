@@ -68,4 +68,13 @@ graph TB
 ```
 
 
+## pyside6
+
+piside6将ui文件转化成py文件命令：
+```
+pyside6-uic widget.ui > ui_widget.py
+```
+然后转换编码
+
+
 
