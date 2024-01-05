@@ -5,8 +5,6 @@
 
 文件传输：localsend
 
-ssh连接：windterm
-
 微软官方office白嫖：https://www.freedidi.com/6619.html
 
 
@@ -67,5 +65,23 @@ graph TB
 	
 ```
 
+
+## pyside6
+
+piside6将ui文件转化成py文件命令：
+```
+pyside6-uic widget.ui > ui_widget.py
+```
+然后转换编码
+
+
+
+ChatNextWeb
+
+```
+sudo docker pull yidadaa/chatgpt-next-web
+
+sudo docker run -d -p 13000:3000 -e OPENAI_API_KEY="API-KEY" -e BASE_URL=https://api.chatanywhere.com.cn yidadaa/chatgpt-next-web
+```
 
 
