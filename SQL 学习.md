@@ -61,13 +61,50 @@ select name from table1 where name like 'Glist%'
 
 ### 排序
 
-按salary 排
-select name,salary from table1 order by salary;    //默认升序
-select name,salary from table1 order by salary desc;    //降序
+按salary 排  
+select name,salary from table1 order by salary;    //默认升序  
+select name,salary from table1 order by salary desc;    //降序  
+select name,salary from table1 order by 2;           //按照第二列进行排序，但不满足健壮性  
 
-如果salary 同，则name按升序
-select name,salary from table1 order by salary, name;
-select name,salary from table1 order by salary asc, name asc;
+如果salary 同，则name按升序  
+select name,salary from table1 order by salary, name;  
+select name,salary from table1 order by salary asc, name asc;  
+
+
+## 数据处理函数
+
+单行数据处理函数又被称为单行处理函数，  
+单行处理函数特点： 一个输入对应一个输出  （行处理）
+与单行处理函数对应的是：多行处理函数。多个输入对应一个输出 （整体处理）  
+
+usage exp:
+select lower(name) from table1;
+
+| NAME | FUNCTION |
+| ---- | ---- |
+| lower | 转换为小写 |
+| upper | 转换为大写 |
+| substr | 取子串 |
+| length | 取长度 |
+| trim | 去空格 |
+| str_to_data | 将字符串转换为日期 |
+| date_format | 设置千分位 |
+| round | 四舍五入 |
+| rand() | 生成随机数 |
+| ifnull | 可以将 null 转换为一个具体的数值 |
+
+examples:
+select substr(name, 1, 1) as name from table1;
+
+
+
+
+
+
+
+
+
+
 
 
 
