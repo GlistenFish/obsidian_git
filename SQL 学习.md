@@ -96,7 +96,10 @@ select lower(name) from table1;
 
 examples:
 select substr(name, 1, 1) as name from table1;
-
+select round(salary, 1) from table1;       //保留1位小数
+select concat(name, salary) from table1;
+使用 ifnull 将 null 当作0来参与运算：
+select name, (salar + ifnull(allowance, 0)) * 12 from table1;
 
 
 
