@@ -61,8 +61,13 @@ select name from table1 where name like 'Glist%'
 
 ### 排序
 
+按salary 排
+select name,salary from table1 order by salary;    //默认升序
+select name,salary from table1 order by salary desc;    //降序
 
-
+如果salary 同，则name按升序
+select name,salary from table1 order by salary, name;
+select name,salary from table1 order by salary asc, name asc;
 
 
 
