@@ -73,6 +73,8 @@ select name,salary from table1 order by salary asc, name asc;
 
 ## 数据处理函数
 
+### 单行处理里函数
+
 单行数据处理函数又被称为单行处理函数，  
 单行处理函数特点： 一个输入对应一个输出  （行处理）
 与单行处理函数对应的是：多行处理函数。多个输入对应一个输出 （整体处理）  
@@ -101,9 +103,25 @@ select concat(name, salary) from table1;
 使用 ifnull 将 null 当作0来参与运算：
 select name, (salar + ifnull(allowance, 0)) * 12 from table1;
 
+### 分组函数
 
+多行处理函数特点：多个输入对应一个输出 （整体处理）  
 
+共5个：
+	count  计数（不算null）
+	sum     求和 （会自动忽略null，不需要处理null）
+	avg
+	max
+	min
 
+attention：
+	分组函数在使用的时候必须先进行分组，然后才能用
+	如果没有对数据进行分组，整张表默认为一组
+
+examples：
+
+select max(salary) from table1;
+select avg(salary) from table1;
 
 
 
