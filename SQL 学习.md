@@ -31,8 +31,9 @@
 show databases;
 show tables;
 use mlearn;
-select * from emp;
 desc emp;
+
+### 查询语句
 
 起别名：
 select col1 as aaa from table1;
@@ -40,10 +41,25 @@ select col1 as aaa from table1;
 使用数学表达式
 select name,salary from table1;
 
+between and 的用法
 select name,salary from tables1 where  salary >= 2500 and <= 3000;
 or
 select name,salary from table1 where salary between 2500 and 3000;
 
+in 的用法
+select no,name,job from table1 where job='AAA' or job='BBB';
+or 
+select no,name,jon from table1 where job in ('AAA', 'BBB');
+// not in
+
+like 的用法
+模糊查询
+% 匹配任意多个字符
+\_  匹配一个字符
+select name from table1 where name like 'Glist%'
+可用 `\` 转义
+
+### 排序
 
 
 
