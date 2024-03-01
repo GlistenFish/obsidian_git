@@ -92,6 +92,7 @@ select lower(name) from table1;
 | round | 四舍五入 |
 | rand() | 生成随机数 |
 | ifnull | 可以将 null 转换为一个具体的数值 |
+| concat | 进行字符串的拼接 |
 
 examples:
 select substr(name, 1, 1) as name from table1;
