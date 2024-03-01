@@ -109,7 +109,7 @@ select name, (salar + ifnull(allowance, 0)) * 12 from table1;
 
 共5个：
 	count  计数（不算null）
-	sum     求和 （会自动忽略null，不需要处理null）
+	sum     求和 （会自动忽略null，不需要处理null，下同）
 	avg
 	max
 	min
@@ -123,6 +123,10 @@ examples：
 select max(salary) from table1;
 select avg(salary) from table1;
 
+ps：
+count(\*) 和 count(salary)的区别
+count(\*)：统计table总行数
+count(salary)：统计 salary 字段有几个除了 null 的元素
 
 
 
