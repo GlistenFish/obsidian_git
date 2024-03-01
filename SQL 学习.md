@@ -24,3 +24,16 @@
 **DCL：** 
 	数据控制语言
 	如：授权grant， 撤销权限revoke
+
+
+## 一些命令
+
+show databases;
+show tables;
+use mlearn;
+select * from emp;
+desc emp;
+
+起别名：
+select col1 as aaa from table1;
+
