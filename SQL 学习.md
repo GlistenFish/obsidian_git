@@ -37,3 +37,19 @@ desc emp;
 起别名：
 select col1 as aaa from table1;
 
+使用数学表达式
+select name,salary from table1;
+
+select name,salary from tables1 where  salary >= 2500 and <= 3000;
+or
+select name,salary from table1 where salary between 2500 and 3000;
+
+
+
+
+
+
+
+## attention
+
+字符串要加单引号
