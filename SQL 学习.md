@@ -186,8 +186,89 @@ select distinct job, salary from table 1;
 	右外连接
 全连接（很少用）ss  
 
+examples:    
+  
+内连接-等值连接：  
 
+查询员工名和员工所在部门  
+SQL92 语法：  
+select  
+	enamm,dname
+from  
+	emp e,dept d  
+where  
+	e.deptno=d.deptno;
 
+SQL99 语法：  
+select  
+	ename,dname
+from  
+	emp e
+join  
+	dept d  
+on  
+	e.deptno=d.deptno;    
+  
+
+内连接-非等值连接：  
+  
+查询员工名、员工薪资、员工薪资等级（薪资在 salgrade 表中的范围）  
+select  
+	e.ename,e.sal,s.grade
+from  
+	emp e  
+join  
+	salgrade s
+on  
+	e.sal between s.losal and s.hisal;  
+  
+  
+内连接-自然连接：  
+  (一张表看作两张表)
+查询员工上级领导，要求显示员工名和对应的领导名  
+select empno,ename,mgr from emp;  
++-------+--------+------+  
+| empno | ename  | mgr  |  
++-------+--------+------+  
+|  7369 | SMITH  | 7902 |  
+|  7499 | ALLEN  | 7698 |  
+|  7521 | WARD   | 7698 |  
+|  7566 | JONES  | 7839 |  
+|  7654 | MARTIN | 7698 |  
+|  7698 | BLAKE  | 7839 |  
+|  7782 | CLARK  | 7839 |  
+|  7788 | SCOTT  | 7566 |  
+|  7839 | KING   | NULL |  
+|  7844 | TURNER | 7698 |  
+|  7876 | ADAMS  | 7788 |  
+|  7900 | JAMES  | 7698 |  
+|  7902 | FORD   | 7566 |  
+|  7934 | MILLER | 7782 |  
++-------+--------+------+   
+
+select   
+	a.ename as 'emploreeName',b.ename as 'managerName'  
+from  
+	emp a  
+join  
+	emp b  
+on  
+	a.mgr=b.empno;  
+KING 的领导是 NULL 没有显示    
+  
+
+外连接（右外连接）：   
+select  
+	e.ename,d.dname  
+from  
+	emp e  
+right join  
+	dept d  
+on  
+	e.deptno=d.deptno  
+有 NULL 的也会显示  
+right 代表将 join 关键字右边的表看作主表,这张表的数据一定会全部显示出来  
+  
 
 
 
