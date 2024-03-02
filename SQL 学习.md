@@ -6,9 +6,10 @@
 	数据操作语言  
 	select..
 
-**DML：** 
+**DML：**   
 	数据操作语言 
-	insert, create, delete, update 
+	insert, create, delete, update    
+	
  
 **DDL：** 
 	数据定义语言 
@@ -57,7 +58,7 @@ like 的用法
 % 匹配任意多个字符
 \_  匹配一个字符
 select name from table 1 where name like 'Glist%'
-可用 `\` 转义
+可用 `\` 转义  
 
 ### 排序
 
@@ -184,6 +185,7 @@ select distinct job, salary from table 1;
 	左外连接（左连接）
 	右外连接
 全连接（很少用）ss  
+
 
 
 
