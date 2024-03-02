@@ -40,7 +40,7 @@
 
 
 ```python
-with open("dynamic programming.txt", 'r', encoding='UTF-8') as file:
+with open("dynamicProgramming.txt", 'r', encoding='UTF-8') as file:
     a = file.readlines()
     row = len(a)
     col = len(a[0]) - 1     # 要去除\n
