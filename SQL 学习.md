@@ -117,6 +117,13 @@ select name, (salar + ifnull(allowance, 0)) * 12 from table1;
 attention：
 	分组函数在使用的时候必须先进行分组，然后才能用
 	如果没有对数据进行分组，整张表默认为一组
+	分组函数不能直接使用在where后面
+	关键字执行顺序：
+		from
+		where
+		group by
+		select
+		order by
 
 examples：
 
@@ -127,6 +134,23 @@ ps：
 count(\*) 和 count(salary)的区别
 count(\*)：统计table总行数
 count(salary)：统计 salary 字段有几个除了 null 的元素
+
+
+### 分组查询
+
+按工作岗位分组并对工资求和
+select job,sum(salary) from table1 group by job;
+
+找每个部门不同工作岗位的最高薪资
+select dept,job,max(salary) from table1 group by dept,job;
+
+
+
+
+
+
+
+
 
 
 
