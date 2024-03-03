@@ -395,6 +395,8 @@ mysql 常见数据类型：
 | clob     | 字符大对象  <br>最多可以存储4G 的字符串  <br>比如存储一篇文章或说明  <br>超过255的都要采取此类型 |                                          |
 | blob     | 二进制大对象  <br>用于存储图片、声音、视频等流媒体数据  <br>往此类型字段插入数据的时候，需要使用 IO 流  |                                          |
 
+  
+
 ### drop  
   
 删除表：drop table t_table1;  
@@ -410,7 +412,10 @@ insert into table1(*column1*,*column2*,*column3*) values(*value1*,*value2*,*valu
 insert into t_user (id, name, birth) values (1,'zhsan', str_to_date ('01-06-2002','%d-%m-%Y'));    
 如果你提供的字符串是 %Y-%m-%d 格式则不需要 str_to_date 函数，会自动转换
   
-可以使用 date_format 函数在查询时将日期转换为特定格式的字符串  
+可以使用 date_format 函数在查询时将日期转换为特定格式的字符串    
+  
+一次插入多条记录：  
+insert into table1 (*column1*,*column2*,*column3*) values (),(),(),(); 
   
 
 ### update  
@@ -426,10 +431,14 @@ usage:
 delete from table1 where key1=value1    
 attention: 如果没有条件整张表的数据都会删除  
   
+  
+### tips
+  
 
-  
-  
-  
+复制表：  
+create table emp2 as select * from emp;  
+将查询结果插入到一张表中：  
+insert into table1_bak select * from dept;
   
   
   
