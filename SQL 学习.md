@@ -268,12 +268,163 @@ on
 	e.deptno=d.deptno  
 有 NULL 的也会显示  
 right 代表将 join 关键字右边的表看作主表,这张表的数据一定会全部显示出来
+   
+   
+三张表、四张表如何连接  
+select   
+	...  
+from  
+	a  
+join  
+	b  
+on  
+  condition(a&b)  
+join  
+	c  
+on  
+	condition(a&c)  
+join  
+	d  
+on  
+	condition(a&d)   
+内连接和外连接可以混合 
+
+ 
+## 子查询  
+  
+select 语句中嵌套 select  
+
+### where 语句中的子查询  
+  
+找出比最低工资高的员工姓名和薪资  
+错误语法：  
+（  
+select  
+	ename,sal  
+from  
+	emp  
+where  
+	sal > min(sal);  
+）  
+正确：  
+select   
+	ename,sal  
+from  
+	emp  
+where  
+	sal > select min(sal) from emp;  
+  
+### from 语句中的子查询  
+  
+找出每个岗位的平均薪资和平均薪资等级  
+step 1:  
+select job,avg(sal) from emp group by job;  
++-----------+-------------+  
+| job       | avg(sal)    |  
++-----------+-------------+  
+| CLERK     | 1037.500000 |  
+| SALESMAN  | 1400.000000 |  
+| MANAGER   | 2758.333333 |  
+| ANALYST   | 3000.000000 |  
+| PRESIDENT | 5000.000000 |   
++-----------+-------------+    
+step 2:  
+select * from salgrade;  
++-------+-------+-------+  
+| GRADE | LOSAL | HISAL |  
++-------+-------+-------+  
+|     1 |   700 |  1200 |  
+|     2 |  1201 |  1400 |  
+|     3 |  1401 |  2000 |  
+|     4 |  2001 |  3000 |  
+|     5 |  3001 |  9999 |  
++-------+-------+-------+    
+step 3:  
+select   
+	t.\* ,s.grade  
+from  
+	(select job,avg(sal) as avgs from emp group by job) t    
+join  
+	salgrade s  
+on  
+	t.avgs between s.losal and hisal;
 
 
-a  
-a  
-a  
-a  
+## limit  
+  
+作用：将查询结果集的一部分取出来。通常是用在分页查询中  
+  
+usage: limit \[startIndex\], length    
+	起始下标是 0
+attention: limit 在 order by 之后执行  
+  
+exp：  
+select    
+	\*  
+from  
+	emp  
+limit 5;  
+  
+取出薪资排名在 3-5 名的员工  
+select ename,sal from emp order by sal desc limit 2,3;  
+  
+## 表操作    
+  
+### create
+  
+create table 表名(字段名1，数据类型，字段名2，数据类型，字段名3，数据类型);  
+create table 表名(  
+	字段名1，数据类型，
+	字段名2，数据类型 \[defaul xxx]，
+	字段名3，数据类型
+	);    
+  
+  
+mysql 常见数据类型：  
+
+| 数据类型     | 描述                                                           | 优缺点                                      |
+| -------- | ------------------------------------------------------------ | ---------------------------------------- |
+| varchar  | 可变长度的字符串  <br>比较智能，节省空间  <br>会根据实际的长度动态分配空间  <br>（255）       | 优点：节省空间  <br>缺点：需要动态分配空间，速度慢             |
+| char     | 定长字符串  <br>（255）                                             | 优点：不需要动态分配空间，速度快  <br>缺点：使用不恰当可能会导致空间的浪费 |
+| int      | 整数型  <br>（11）                                                |                                          |
+| bigint   | 数字中的长整型                                                      |                                          |
+| float    | 单精度                                                          |                                          |
+| double   | 双精度                                                          |                                          |
+| date     | 短日期类型                                                        |                                          |
+| datetime | 长日期类型                                                        |                                          |
+| clob     | 字符大对象  <br>最多可以存储4G 的字符串  <br>比如存储一篇文章或说明  <br>超过255的都要采取此类型 |                                          |
+| blob     | 二进制大对象  <br>用于存储图片、声音、视频等流媒体数据  <br>往此类型字段插入数据的时候，需要使用 IO 流  |                                          |
+
+### delete  
+  
+删除表：drop table t_table1;  
+表不存在则报错    
+drop table if exitst t_table1;
+
+### insert    
+  
+usage:
+insert into table1(*column1*,*column2*,*column3*) values(*value1*,*value2*,*value3*);  
+  
+
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
