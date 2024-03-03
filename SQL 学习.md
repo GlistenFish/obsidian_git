@@ -155,35 +155,35 @@ from
 	...
 where
 	...
-group by
+group by  
 	...
-having
+having  
 	...
-order by
+order by  
 	...
 
 ### distinct
 
-查询结果去重
+查询结果去重  
 
-select distinct job from table 1;
-对多个字段去重
-select distinct job, salary from table 1;
-只能加在所有字段的最前方
+select distinct job from table 1;  
+对多个字段去重  
+select distinct job, salary from table 1;  
+只能加在所有字段的最前方  
 
 
 ## 连接查询
 
-根据连接方式分类：
-
-内连接：
-	等值连接
-	非等值连接
-	自连接
-外连接：
-	左外连接（左连接）
-	右外连接
-全连接（很少用）ss  
+根据连接方式分类：  
+  
+内连接：  
+	等值连接  
+	非等值连接  
+	自连接  
+外连接：  
+	左外连接（左连接）  
+	右外连接  
+全连接（很少用）
 
 
 
