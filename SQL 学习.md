@@ -395,7 +395,7 @@ mysql 常见数据类型：
 | clob     | 字符大对象  <br>最多可以存储4G 的字符串  <br>比如存储一篇文章或说明  <br>超过255的都要采取此类型 |                                          |
 | blob     | 二进制大对象  <br>用于存储图片、声音、视频等流媒体数据  <br>往此类型字段插入数据的时候，需要使用 IO 流  |                                          |
 
-### delete  
+### drop  
   
 删除表：drop table t_table1;  
 表不存在则报错    
@@ -417,11 +417,16 @@ insert into t_user (id, name, birth) values (1,'zhsan', str_to_date ('01-06-2002
   
 usage:  
 update table 1 set key1=value1, key2=value2, key3=value3... where condition1  
-如果没有条件限制会导致所有数据全部更新  
-
-
+attention: 如果没有条件限制会导致所有数据全部更新  
 
   
+### delete
+  
+usage:
+delete from table1 where key1=value1    
+attention: 如果没有条件整张表的数据都会删除  
+  
+
   
   
   
