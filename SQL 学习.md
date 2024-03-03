@@ -267,16 +267,17 @@ right join
 on  
 	e.deptno=d.deptno  
 有 NULL 的也会显示  
-right 代表将 join 关键字右边的表看作主表,这张表的数据一定会全部显示出来  
-  
-
+right 代表将 join 关键字右边的表看作主表,这张表的数据一定会全部显示出来                    
+    
 
 
 ## attention
 
 字符串要加单引号
 
-
+啊 
+sssss  
+aaaaa
 
 
 ## 案例所用数据库
