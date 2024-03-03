@@ -368,8 +368,63 @@ limit 5;
 取出薪资排名在 3-5 名的员工  
 select ename,sal from emp order by sal desc limit 2,3;  
   
+## 表操作    
+  
+### create
+  
+create table 表名(字段名1，数据类型，字段名2，数据类型，字段名3，数据类型);  
+create table 表名(  
+	字段名1，数据类型，
+	字段名2，数据类型 \[defaul xxx]，
+	字段名3，数据类型
+	);    
+  
+  
+mysql 常见数据类型：  
+
+| 数据类型     | 描述                                                           | 优缺点                                      |
+| -------- | ------------------------------------------------------------ | ---------------------------------------- |
+| varchar  | 可变长度的字符串  <br>比较智能，节省空间  <br>会根据实际的长度动态分配空间  <br>（255）       | 优点：节省空间  <br>缺点：需要动态分配空间，速度慢             |
+| char     | 定长字符串  <br>（255）                                             | 优点：不需要动态分配空间，速度快  <br>缺点：使用不恰当可能会导致空间的浪费 |
+| int      | 整数型  <br>（11）                                                |                                          |
+| bigint   | 数字中的长整型                                                      |                                          |
+| float    | 单精度                                                          |                                          |
+| double   | 双精度                                                          |                                          |
+| date     | 短日期类型                                                        |                                          |
+| datetime | 长日期类型                                                        |                                          |
+| clob     | 字符大对象  <br>最多可以存储4G 的字符串  <br>比如存储一篇文章或说明  <br>超过255的都要采取此类型 |                                          |
+| blob     | 二进制大对象  <br>用于存储图片、声音、视频等流媒体数据  <br>往此类型字段插入数据的时候，需要使用 IO 流  |                                          |
+
+### delete  
+  
+删除表：drop table t_table1;  
+表不存在则报错    
+drop table if exitst t_table1;
+
+### insert    
+  
+usage:
+insert into table1(*column1*,*column2*,*column3*) values(*value1*,*value2*,*value3*);  
+  
+
+  
 
 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
