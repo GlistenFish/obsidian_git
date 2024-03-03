@@ -268,12 +268,108 @@ on
 	e.deptno=d.deptno  
 有 NULL 的也会显示  
 right 代表将 join 关键字右边的表看作主表,这张表的数据一定会全部显示出来
+   
+   
+三张表、四张表如何连接  
+select   
+	...  
+from  
+	a  
+join  
+	b  
+on  
+  condition(a&b)  
+join  
+	c  
+on  
+	condition(a&c)  
+join  
+	d  
+on  
+	condition(a&d)   
+内连接和外连接可以混合 
+
+ 
+## 子查询  
+  
+select 语句中嵌套 select  
+
+### where 语句中的子查询  
+  
+找出比最低工资高的员工姓名和薪资  
+错误语法：  
+（  
+select  
+	ename,sal  
+from  
+	emp  
+where  
+	sal > min(sal);  
+）  
+正确：  
+select   
+	ename,sal  
+from  
+	emp  
+where  
+	sal > select min(sal) from emp;  
+  
+### from 语句中的子查询  
+  
+找出每个岗位的平均薪资和平均薪资等级  
+step 1:  
+select job,avg(sal) from emp group by job;  
++-----------+-------------+  
+| job       | avg(sal)    |  
++-----------+-------------+  
+| CLERK     | 1037.500000 |  
+| SALESMAN  | 1400.000000 |  
+| MANAGER   | 2758.333333 |  
+| ANALYST   | 3000.000000 |  
+| PRESIDENT | 5000.000000 |   
++-----------+-------------+    
+step 2:  
+select * from salgrade;  
++-------+-------+-------+  
+| GRADE | LOSAL | HISAL |  
++-------+-------+-------+  
+|     1 |   700 |  1200 |  
+|     2 |  1201 |  1400 |  
+|     3 |  1401 |  2000 |  
+|     4 |  2001 |  3000 |  
+|     5 |  3001 |  9999 |  
++-------+-------+-------+    
+step 3:  
+select   
+	t.\* ,s.grade  
+from  
+	(select job,avg(sal) as avgs from emp group by job) t    
+join  
+	salgrade s  
+on  
+	t.avgs between s.losal and hisal;
 
 
-a  
-a  
-a  
-a  
+## limit  
+  
+作用：将查询结果集的一部分取出来。通常是用在分页查询中  
+  
+usage: limit \[startIndex\], length    
+	起始下标是 0
+attention: limit 在 order by 之后执行  
+  
+exp：  
+select    
+	\*  
+from  
+	emp  
+limit 5;  
+  
+取出薪资排名在 3-5 名的员工  
+select ename,sal from emp order by sal desc limit 2,3;  
+  
+
+
 
 
 
