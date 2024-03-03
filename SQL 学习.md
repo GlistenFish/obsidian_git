@@ -390,8 +390,8 @@ mysql 常见数据类型：
 | bigint   | 数字中的长整型                                                      |                                          |
 | float    | 单精度                                                          |                                          |
 | double   | 双精度                                                          |                                          |
-| date     | 短日期类型                                                        |                                          |
-| datetime | 长日期类型                                                        |                                          |
+| date     | 短日期类型（只有 date）                                               |                                          |
+| datetime | 长日期类型（有 date 和 time                                          |                                          |
 | clob     | 字符大对象  <br>最多可以存储4G 的字符串  <br>比如存储一篇文章或说明  <br>超过255的都要采取此类型 |                                          |
 | blob     | 二进制大对象  <br>用于存储图片、声音、视频等流媒体数据  <br>往此类型字段插入数据的时候，需要使用 IO 流  |                                          |
 
@@ -406,8 +406,18 @@ drop table if exitst t_table1;
 usage:
 insert into table1(*column1*,*column2*,*column3*) values(*value1*,*value2*,*value3*);  
   
-
+插入日期类型：  
+insert into t_user (id, name, birth) values (1,'zhsan', str_to_date ('01-06-2002','%d-%m-%Y'));    
+如果你提供的字符串是 %Y-%m-%d 格式则不需要 str_to_date 函数，会自动转换
   
+可以使用 date_format 函数在查询时将日期转换为特定格式的字符串  
+  
+
+### update  
+  
+usage:  
+update table 1 set key1=value1, key2=value2, key3=value3... where condition1  
+如果没有条件限制会导致所有数据全部更新  
 
 
 
