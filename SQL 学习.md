@@ -432,8 +432,7 @@ delete from table1 where key1=value1
 attention: 如果没有条件整张表的数据都会删除  
   
   
-### tips
-  
+### tips  
 
 复制表：  
 create table emp2 as select * from emp;  
@@ -441,7 +440,143 @@ create table emp2 as select * from emp;
 insert into table1_bak select * from dept; 
   
   
+### 删除  
+
+delete from table1;  
+该删除方法比较慢，并且数据删除后在硬盘上的真实存储空间不会释放  
+缺点是删除效率低，优点是支持回滚  
   
+truncate table table1;  
+truncate 删除效率比较高，表被一次截断，物理删除  
+缺点是不支持回滚，优点是快速  
+
+truncate 属于 DDL 操作，delete 属于 DML  
+
+drop table1;  
+删除 table1这张表  
+  
+
+## 约束
+
+### 约束包括哪些  
+
+非空约束： not null  
+唯一性约束：unique  
+主键约束： primary key  
+外键约束：foreign key  
+检查约束：check（mysql 不支持，oracle 支持）  
+
+### 非空约束
+
+exp:  
+
+create table table1(   
+	id int,  
+	name varchar(255) not null  
+);   
+not null 没有表级约束    
+
+
+### 唯一性约束
+
+create table table1(   
+	id int, 
+	name varchar(255) unique 
+);    
+只被 unique 约束可以为 null  
+
+使 id 和 name 两个字段联合起来具有唯一性    
+create table table1(   
+	id int, 
+	name varchar(255), 
+	unique(id,name) 
+);   
+
+约束添加在列后面，成为列级约束，没有添加到列后面的，像上述这个情况，称为表级约束    
+
+unique 和 not null 一起使用   
+create table table1(   
+	id int not null unique, 
+	name varchar(255) 
+);   
+res:   
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+  
+id 字段被当作主键（mysql 中是这样，oracle 中不是）
+  
+
+### 主键约束
+
+每张表必须要有主键没有主键则表无效
+
+一个字段作主键称为单一主键，两个字段联合起来作主键，称为复合主键   
+在实际开发中不建议使用复合主键
+
+主键值建议使用：   
+	int 
+	bigint 
+	char 
+主键值一般是定长的  
+
+主键除了单一主键和复合主键之外，还可以这样分类：   
+	自然主键：主键值是一个自然数，和业务没关系
+	业务主键：主键值和业务紧密关联，例如拿银行卡帐号作主键。
+
+在实际开发中使用自然主键比较多，因为主键只要做到不重复就行，不需要有意义。主键一旦和业务挂钩，那么当业务发生变动的时候，可能会影响到主键值，
+
+主键自增： create table table1( id int primary key auto_increment, name varchar(255) );
+
+## 外键
+
+A 表中的 X 字段中的内容必须为 B 表 XX 字段中的值 被引用的 B 表称为父表，A 表称为子表
+
+创建表的顺序：先创建父，再子 删除表的顺序：先删除子，再父 创建和删除数据的顺序同
+
+exp: create table B( no int primary key, class varchar(255) ); create table A( id int primary key auto_increment, name varchar(255), no int, foreign key(no) references B(no) );
+
+外键引用父表中的字段，该字段不一定是主键，但必须是unique
+
+外键可以为 null
+
+## 存储引擎
+
+存储引擎是mysql中特有的一个术语，其他数据库中不叫这个名字 实际上存储引擎是一个表存储/组织数据的方式 不同的存储引擎，表存储数据的方式不同
+
+如何给表添加/指定“存储引擎”： 可以在建表的时候给表指定存储引擎 如以下command: CREATE TABLE `t_student` ( `no` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `cno` int(11) DEFAULT NULL, PRIMARY KEY (`no`), KEY `cno` (`cno`), CONSTRAINT `t_student_ibfk_1` FOREIGN KEY (`cno`) REFERENCES `t_class` (`classno`) ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+ENGING用来指定存储引擎  
+mysql默认存储引擎为：InnoDB  
+mysql默认的字符编码方式为：utf8
+
+查看mysql支持哪些存储引擎 show engines \G
+
+InnoDB支持数据库崩溃后自动恢复机制， InnoDB引擎最大的特点是支持事务，以保证数据的安全 但效率不是很高，并且也不能压缩，不能转换为只读，不能很好的节省空间
+
+## 事务 (transaction)
+
+只有DML语句才有事务这一说 insert delete update
+
+本质上一个事务就是多条DML语句同时成功或者同时失败
+
+事务是怎么做到多条DML语句同时成功和同时失败的呢？
+
+InnoDB存储引擎：提供一组用来记录事务性活动的日志文件
+
+事务开启了： insert insert insert delete update update update 事务结束了！
+
+在事务的执行过程中，每一条DML的操作都会记录到“事务性活动的日志文件”中。 在事务的执行过程中，我们可以提交事务，也可以回滚事务。
+
+提交事务？ 清空事务性活动的日志文件，将数据全部彻底持久化到数据库表中。 提交事务标志着，事务的结束。并且是一种全部成功的结束。
+
+回滚事务？ 将之前所有的DML操作全部撤销，并且清空事务性活动的日志文件 回滚事务标志着，事务的结束。并且是一种全部失败的结束。
+
+mysql默认自动提交
+
+开启事务： start transaction; 开启事务后必须 commit; 手动提交
   
   
   
