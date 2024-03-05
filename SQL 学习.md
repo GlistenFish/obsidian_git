@@ -438,7 +438,7 @@ attention: 如果没有条件整张表的数据都会删除
 复制表：  
 create table emp2 as select * from emp;  
 将查询结果插入到一张表中：  
-insert into table1_bak select * from dept;
+insert into table1_bak select * from dept; 
   
   
   
