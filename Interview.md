@@ -40,3 +40,16 @@ RIP 协议缺陷：
 	在网络中选举 DR 和 BDR，网络所有路由器只与 DR 和 BDR 建立邻接关系
 	广播型网络中一般会选举 DR 和 BDR，PPP 网络中不会选举 DR 和 BDR  
 3.传递链路状态信息    
+![](Pasted%20image%2020240315152415.png)    
+![](Pasted%20image%2020240315152444.png)    
+![](Pasted%20image%2020240315152526.png)    
+  
+4.路径计算  
+![](Pasted%20image%2020240315152540.png)      
+
+
+OSPF 分区域管理    
+![](Pasted%20image%2020240315153041.png)    
+    
+
+
