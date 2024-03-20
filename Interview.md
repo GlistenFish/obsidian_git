@@ -36,6 +36,7 @@ RIP 协议缺陷：
   
 TCP 和 UDP 的区别？  
 使用 VLAN 的好处？  
+RAID0, RAID1, RAID3, RAID5 的区别？  
 
 
   
