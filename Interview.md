@@ -39,6 +39,7 @@ TCP 和 UDP 的区别？
 RAID0, RAID1, RAID3, RAID5 的区别？  
 说说网络层、传输层、数据链路层是做什么的，以及之间的关系？  
 STP、RSTP、MSTP 的区别？  
+OSPF 协议，邻接表  
 
 
   
