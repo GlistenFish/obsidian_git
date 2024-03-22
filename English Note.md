@@ -15,6 +15,9 @@ exp:
 1. *I'm trying to knock out my resume but...*    
 2. *I need to knock out my dinner before I go out with my friends*  
   
-**
+**look over it**  
+it means to review or check something for errors  
+exp:  
+*I know you are the resume guru, so would you mind looking over it for me?*
 
-  
+
