@@ -6,4 +6,5 @@ eg: Using my Google Calendar helps me structure my week.
   
 **individual**  
 (n, adj) one member or one paritcular person  
-eg
+eg: I need a different individual to sign as a witness  
+eg: An egg carton has twelve individual spaces.
