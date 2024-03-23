@@ -1,3 +1,5 @@
 remarkable  
 roughly  
-advent
+advent  
+brilliant  
+toiling in the trenches  
