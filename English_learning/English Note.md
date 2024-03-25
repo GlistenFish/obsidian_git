@@ -35,3 +35,6 @@ eg:
 1. I have a head start in programming.  
 2. A good education gives your child a head start in life.  
   
+**eye-opener**   
+\*\*\*  
+  
