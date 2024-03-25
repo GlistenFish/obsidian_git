@@ -28,5 +28,10 @@ relax
   
 **lose your head**  
 lose self-control to panic or to lose ont's composure
-
-
+  
+**head start**  
+start before others  
+eg:   
+1. I have a head start in programming.  
+2. A good education gives your child a head start in life.  
+  
