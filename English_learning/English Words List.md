@@ -8,4 +8,9 @@ composure
 sensible  
 reasonable  
 fair  
-fairly  
+fairly    
+lay out  
+opponent  
+proposal  
+offset  
+ratchet up  
