@@ -13,4 +13,4 @@ lay out
 opponent  
 proposal  
 offset  
-ratchet up  
+ratchet up    
