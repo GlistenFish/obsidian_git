@@ -24,7 +24,9 @@ eg:
 someone is every beautiful or handsome. "some idol are easy on the eyes"  
   
 **let your hair down**  
-relax  
+relax    
   
+**lose your head**  
+lose self-control to panic or to lose ont's composure
 
 
