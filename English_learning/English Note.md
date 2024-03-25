@@ -36,5 +36,5 @@ eg:
 2. A good education gives your child a head start in life.  
   
 **eye-opener**   
-\*\*\*  
+something 
   
