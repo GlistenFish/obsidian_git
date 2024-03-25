@@ -5,3 +5,5 @@ brilliant
 toiling in the trenches  
 panic  
 composure
+sensible  
+reasonable  

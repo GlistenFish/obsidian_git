@@ -38,3 +38,7 @@ eg:
 **eye-opener**   
 something open your horizons
   
+**come to your senses**  
+to start understand that you have been behaving stupidly  
+to stop being foolish and become sensible again   
+to become reasonable after being foolish  
