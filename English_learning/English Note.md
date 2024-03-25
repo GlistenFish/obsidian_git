@@ -18,6 +18,7 @@ eg:
 **look over it**  
 it means to review or check something for errors  
 eg:  
-*I know you are the resume guru, so would you mind looking over it for me?*
+*I know you are the resume guru, so would you mind looking over it for me?*  
+
 
 
