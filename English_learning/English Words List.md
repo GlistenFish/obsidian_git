@@ -7,3 +7,5 @@ panic
 composure
 sensible  
 reasonable  
+fair  
+fairly  

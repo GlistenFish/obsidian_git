@@ -45,3 +45,7 @@ to become reasonable after being foolish
   
 **face the music**  
 to receive a punishment or accept responsibility for monething you have done  
+  
+**rack your brain**  
+\*\*\*  
+  
