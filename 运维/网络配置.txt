@@ -1,3 +1,0 @@
-ip addr
-ip addr add 192.168.1.20/24 dev ens33
-ip addr del 192.168.1.20/24 dev ens33
