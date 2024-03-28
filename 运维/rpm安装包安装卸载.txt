@@ -1,0 +1,16 @@
+1.查看系统中是否有该软件
+rpm -qa		#列出所有已经安装过的rpm软件包
+
+2.查看该软件的详细信息，确定软件作用
+rpm -qpi tree.rpm
+
+3.确认该软件安装的路径
+rpm -qpl tree.rpm
+
+4.安装软件
+rpm -ivh tree.rpm
+
+5.使用软件
+
+6.软件卸载
+rpm -e tree

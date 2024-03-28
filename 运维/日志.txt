@@ -1,0 +1,13 @@
+日志文件
+/var
+
+日志分类：
+	系统日志
+	登录日志
+	程序日志
+
+日志的管理服务：
+in ascending order: debug,  info,  notice,  warning,  warn (same  as  warning),  err,  error  (same as err), crit, alert, emerg, panic (same as emerg).
+ 
+日志的异地备份  日志服务器建立
+........
