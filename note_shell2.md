@@ -31,7 +31,33 @@ $#         获取执行脚本参数总个数
 $*         获取执行脚本所有参数，不加引号等于$@作用，加上引号 $* 作用是接收所有参数为单个字符  
 $@         不加引号，效果同$*，加引号是接收所有参数为独立字符串
 ```  
+- $* 和 $@ 的区别  
+```bash  
+glisten@GUbu:~$ cat test.sh 
+#!/bin/bash
+for var in "$*"
+do
+    echo "$var"
+done
+
+for var in "$@"
+do
+    echo "$var"
+done
+```
+```sh
+glisten@GUbu:~$ bash test.sh aa bb cc
+aa bb cc
+aa
+bb
+cc
+```
   
-  
+## 特殊状态变量  
+```bash  
+$?   上一次命令执行转台的返回值，非0则失败  
+$$   上一次后台id进程的PID  
+$—   在此之前，最后一个参数  
+```  
 
  
