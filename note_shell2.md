@@ -71,4 +71,20 @@ shift
 ```  
 - echo 命令
 >-n 不换行输出
->-e 解析字符中的特殊符号
+>-e 解析字符中的特殊符号如\\n\\t
+- evel
+>执行多个命令
+`eval ls;cd /tmp`  
+- exec  
+>不创建子进程，执行后续命令，且执行完毕后，自动exit
+  
+## shell 子串的花式用法  
+```  
+var='aaaa'  
+  
+${var}                      返回变量值  
+${#var}                     返回变量值长度  
+${var:startIndex}           返回从startIndex开始之后的字符  
+${var:startIndex:length}  
+${var#word}                 
+```
