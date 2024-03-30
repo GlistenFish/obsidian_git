@@ -60,4 +60,15 @@ $$   上一次后台id进程的PID
 $—   在此之前，最后一个参数  
 ```  
 
- 
+# SHELL 子串
+## bash 一些基础的内置命令  
+```  
+echo eval  
+exec  
+export  
+read  
+shift
+```  
+- echo 命令
+>-n 不换行输出
+>-e 解析字符中的特殊符号
