@@ -86,8 +86,26 @@ ${var}                      返回变量值
 ${#var}                     返回变量值长度  
 ${var:startIndex}           返回从startIndex开始之后的字符  
 ${var:startIndex:length}  
-${var#word}                 从变量开头删除最短匹配的word子串  
-${var%word}                 从变量结尾删除最短匹配的word子串  
+${var#word}                 删除变量中开头为word的子串（非贪婪）    
+${var##word}                删除变量中开头为word的子串（贪婪）    
+${var%word}                 删除变量中结尾为word的子串（非贪婪））    
+${var%word}                 删除变量中结尾为word的子串（贪婪）  
 ${var/pattern/string}       用string代替第一个匹配的word  
 ${var//pattern/string}      用string代替所有的pattern
+```  
+  
+### 案例：批量修改文件名  
+- 数据准备：  
+```sh  
+glisten@GUbu:~/tmp$ touch ttt_{1..5}_finished.bak
+glisten@GUbu:~/tmp$ touch sss_{1..5}_finished.bak
+glisten@GUbu:~/tmp$ ls
+sss_1_finished.bak  sss_5_finished.bak  ttt_4_finished.bak
+sss_2_finished.bak  ttt_1_finished.bak  ttt_5_finished.bak
+sss_3_finished.bak  ttt_2_finished.bak
+sss_4_finished.bak  ttt_3_finished.bak
+```  
+- 要求：将所有文件的文件名去掉"\_finished"  
+```sh  
+
 ```
