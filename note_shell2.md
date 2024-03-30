@@ -107,5 +107,5 @@ sss_4_finished.bak  ttt_3_finished.bak
 ```  
 - 要求：将所有文件的文件名去掉"\_finished"  
 ```sh  
-
+for fname in `ls *_finished*`;do mv $fname `echo ${fname//_finished/}`;done
 ```
