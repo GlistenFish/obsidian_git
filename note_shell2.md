@@ -86,5 +86,8 @@ ${var}                      返回变量值
 ${#var}                     返回变量值长度  
 ${var:startIndex}           返回从startIndex开始之后的字符  
 ${var:startIndex:length}  
-${var#word}                 
+${var#word}                 从变量开头删除最短匹配的word子串  
+${var%word}                 从变量结尾删除最短匹配的word子串  
+${var/pattern/string}       用string代替第一个匹配的word  
+${var//pattern/string}      用string代替所有的pattern
 ```
