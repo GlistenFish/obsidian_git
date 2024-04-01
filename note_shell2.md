@@ -125,3 +125,7 @@ ${parameter:?word}
 如果para变量为空，什么都不做，否则word返回  
 ${parameter:+word}
 ```  
+  
+# 父子Shell 
+![](Pasted%20image%2020240401162608.png)  
+  
