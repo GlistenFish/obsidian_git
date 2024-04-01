@@ -110,3 +110,18 @@ sss_4_finished.bak  ttt_3_finished.bak
 for fname in `ls *_finished*`;do mv $fname `echo ${fname//_finished/}`;done
 ```  
   
+# 特殊 shell 扩展  
+```  
+如果parameter变量值为空，返回word字符串，复制给res变量  
+res=${parameter:-word}  
+  
+如果para变量为空，则word替代变量值，且返回其值  
+res=${parameter:=word}  
+  
+如果para变量为空，word当作stderr输出，否则输出变量值  
+用户设置变量为空导致错误时，返回的错误信息  
+${parameter:?word}  
+  
+如果para变量为空，什么都不做，否则word返回  
+${parameter:+word}
+```  
