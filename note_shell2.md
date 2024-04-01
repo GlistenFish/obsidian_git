@@ -126,6 +126,48 @@ ${parameter:?word}
 ${parameter:+word}
 ```  
   
-# 父子Shell 
-![](Pasted%20image%2020240401162608.png)  
+# 父子Shell
+![](Pasted%20image%2020240401162608.png)    
   
+- 为何需要子 shell：  
+![](Pasted%20image%2020240401165209.png)  
+
+## 创建进程列表（创建子 shell 执行命令）  
+>shell 的进程列表理念，需要使用小括号，如下执行方式，就称之为进程列表
+>加上小括号，就是开启子 shell 运行命令
+```sh  
+(cd ~;pwd;ls;cd /tmp/;)
+```  
+  
+## 检测是否存在子shell
+```  
+linux默认的有关shell的变量  
+  
+#该变量的值特点，如果是0，就是在当前shell环境中执行的，否则就是开辟子shell去运行的  
+$BASH_SUBSHELL
+```  
+- 检测是否开始子 shell   
+```sh  
+echo $BASH_SUBSHELL
+```
+- 明确开启子 shell 运行的命令
+- 进程列表，并且开启子 shell 运行  
+```  
+(cd ~;pwd;ls;cd /tmp/;echo $BASH_SUBSHELL)
+```  
+  
+## 子 shell 嵌套运行  
+- 开启子 shell 运行命令，可以嵌套多个  
+```bash  
+glisten@GUbu:~$ (pwd;(echo $BASH_SUBSHELL))
+/home/glisten
+2  
+glisten@GUbu:~$ (pwd;(pwd;(echo $BASH_SUBSHELL)))
+/home/glisten
+/home/glisten
+3
+```  
+>利用括号，开启子 shell 的理念，以及检查，在 shell 脚本开发中，经常会用到 shell 进行多进程的处理，提高程序并发执行效率
+  
+  
+## 父子 shell 和后台进程的关系  
