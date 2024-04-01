@@ -170,4 +170,35 @@ glisten@GUbu:~$ (pwd;(pwd;(echo $BASH_SUBSHELL)))
 >利用括号，开启子 shell 的理念，以及检查，在 shell 脚本开发中，经常会用到 shell 进行多进程的处理，提高程序并发执行效率
   
   
-## 父子 shell 和后台进程的关系  
+# 内置命令与外置命令  
+- 概念：  
+>内置命令：在系统启动时就加载入内存，执行效率更高，但是占用资源，如cd
+>外置命令：系统需要从硬盘中读取程序文件，再读入内存加载
+  
+外置命令，也称之为，自己单独下载的文件系统命令，处于 bash shell 之外的程序  
+```sh  
+/bin  
+/usr/bin  
+/sbin  
+/usr  
+  
+glisten@GUbu:~$ type cd
+cd 是 shell 内建
+glisten@GUbu:~$ type ps
+ps 已被录入哈希表 (/usr/bin/ps)
+```
+比如 ps 命令    
+
+>通过 linux 的 type 命令，验证是内置还是外置命令
+  
+外置命令的特点：一定会开启子进程执行  
+
+- 内置命令  
+>内置命令不会产生子进程去执行
+>内置命令和 shell 是为一体的，是 shell 的一部分，不需要单独去读取某个文件，系统启动后，就执行在内存中了
+  
+- 查看 linux 的 内置 shell 命令  
+```sh  
+compgen -b
+```  
+  
