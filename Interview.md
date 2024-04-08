@@ -44,8 +44,15 @@ RIP 协议缺陷：
 ![](./photo/Pasted%20image%2020240315152415.png)    
 ![](./photo/Pasted%20image%2020240315152444.png)    
 ![](./photo/Pasted%20image%2020240315152526.png)    
-=======
   
+4.路径计算  
+![](./photo/Pasted%20image%2020240315152540.png)      
+
+
+OSPF 分区域管理    
+![](./photo/Pasted%20image%2020240315153041.png)    
+    
+
   
   
 # 快问快答  
@@ -58,14 +65,6 @@ STP、RSTP、MSTP 的区别？
 OSPF 协议，邻接表  
 
 
->>>>>>> origin/main
   
-4.路径计算  
-![](./photo/Pasted%20image%2020240315152540.png)      
-
-
-OSPF 分区域管理    
-![](./photo/Pasted%20image%2020240315153041.png)    
-    
 
 
