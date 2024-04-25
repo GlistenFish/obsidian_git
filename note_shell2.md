@@ -14,7 +14,7 @@
  >set, 输出所有变量，包括全局变量、局部变量
  >env，只显示全局变量
  >declare，输出所有的变量，如同set
- >export，显示和设置环境变量值
+ >export，显示和设置环境变量值[02_docker实践](02_docker实践.md)
  
  >unset 取消环境变量的设置
  >readonly 只读，只有 shell 结束该变量才失效
