@@ -25,3 +25,8 @@ zabbix_get -s 192.168.122.102 -k root.login
 - test  
 ![](Pasted%20image%2020240601195157.png)  
   
+### 1.5 Create triggers  
+![](Pasted%20image%2020240601201849.png)  
+  
+![](Pasted%20image%2020240601201925.png)  
+  
