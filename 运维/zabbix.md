@@ -22,3 +22,6 @@ zabbix_get -s 192.168.122.102 -k root.login
 ### 1.4 web: create monitor items  
 ![](Pasted%20image%2020240601194636.png)  
   
+- test  
+![](Pasted%20image%2020240601195157.png)  
+  
