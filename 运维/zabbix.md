@@ -56,4 +56,5 @@ zabbix_get -s 192.168.122.102 -k root.login
   
 ![](Pasted%20image%2020240602232652.png)      
 
-sss
+[zabbix](zabbix.xmind)  
+  
