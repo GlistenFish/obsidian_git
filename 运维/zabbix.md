@@ -42,3 +42,5 @@ zabbix_get -s 192.168.122.102 -k root.login
  - 3. add hosts, item of moniting... on the web  
   
 1. engage snmp  
+![](Pasted%20image%2020240602221447.png)  
+  
