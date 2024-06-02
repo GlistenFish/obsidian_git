@@ -44,3 +44,14 @@ zabbix_get -s 192.168.122.102 -k root.login
 1. engage snmp  
 ![](Pasted%20image%2020240602221447.png)  
   
+![](Pasted%20image%2020240602231621.png)  
+  
+![](Pasted%20image%2020240602231842.png)  
+  
+![](Pasted%20image%2020240602231854.png)  
+
+![](Pasted%20image%2020240602232914.png)
+
+![](Pasted%20image%2020240602232600.png)
+  
+![](Pasted%20image%2020240602232652.png)  
