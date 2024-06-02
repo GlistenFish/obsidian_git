@@ -30,4 +30,15 @@ zabbix_get -s 192.168.122.102 -k root.login
   
 ![](Pasted%20image%2020240601201925.png)  
   
-## Monitoring Alarm  
+## *snmp* monitor network devices  
+
+- applications:
+	- monitor network devices
+	- it can also monitor devices that have the snmp function enabled  
+  
+ ### 2.1 Monitor network devices
+ - 1. enable the snmp function of devices (network devices)
+ - 2. test on the zabbix server, whether it can get the info of devices
+ - 3. add hosts, item of moniting... on the web  
+  
+1. engage snmp  
