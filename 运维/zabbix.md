@@ -30,3 +30,4 @@ zabbix_get -s 192.168.122.102 -k root.login
   
 ![](Pasted%20image%2020240601201925.png)  
   
+## Monitoring Alarm  
