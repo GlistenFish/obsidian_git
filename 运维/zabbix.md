@@ -105,4 +105,14 @@ ok
   
 ### add hosts automaticly  
 - auto find
-- auto regist
+- auto register  
+
+| policy of auto-add |                                                                                        |                                                                      |
+| ------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| auto add           | The server actively scans all hosts in the LAN and adds new one if any                 | the configuration is convenient, but the efficiency is not high      |
+| auto register      | The client actively registers with the server, the server only need to wait and verify | the configuration is a litlle bit complex, but the efficency is high |
+- auto add: server-active
+- auto register: client-active
+  
+### Auto find  
+#### env preparation  
