@@ -90,4 +90,19 @@ configure /etc/zabbix/zabbix_server.con
   
 ![](Pasted%20image%2020240604161651.png)  
 test  
-![](Pasted%20image%2020240604163456.png)
+![](Pasted%20image%2020240604163456.png)  
+  
+![](Pasted%20image%2020240604164723.png)  
+  
+![](Pasted%20image%2020240604164733.png)  
+  
+ok  
+![](Pasted%20image%2020240604164747.png)  
+  
+## Do some autumation  
+- add hosts automaticly
+- multiple idc (like one in Beijing, one in Shanghai)  
+  
+### add hosts automaticly  
+- auto find
+- auto regist
