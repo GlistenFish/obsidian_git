@@ -72,5 +72,13 @@ zabbix_get -s 192.168.122.102 -k root.login
 - server
 	- debug
 	- configure zabbix-java-gateway and zabbix server
-	- web page, add hosts, associate templates  
- 
+	- web page, add hosts, associate templates    
+  
+1. configure client
+edit file tomcat/bin/catalina.sh to start remote monitor function    
+![](Pasted%20image%2020240604155130.png)  
+  
+![](Pasted%20image%2020240604155150.png)  
+  
+2. configure server  zabbix-java-gateway  
+first, yum install zabbix-java-gateway  
