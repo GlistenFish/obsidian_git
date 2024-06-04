@@ -58,3 +58,19 @@ zabbix_get -s 192.168.122.102 -k root.login
 
 [zabbix](zabbix.xmind)  
   
+## Monitor java process  
+  
+### 1. Overview  
+- monitor java process java-gateway
+![](Pasted%20image%2020240603195439.png)
+  
+### 2. env prepare  
+- client
+	- web03
+	- jdk tomcat
+	- start remote monitor function
+- server
+	- debug
+	- configure zabbix-java-gateway and zabbix server
+	- web page, add hosts, associate templates  
+ 
