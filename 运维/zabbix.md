@@ -88,4 +88,6 @@ configure zabbix-java-gateway
 configure /etc/zabbix/zabbix_server.con  
 ![](Pasted%20image%2020240604161421.png)  
   
-![](Pasted%20image%2020240604161651.png)
+![](Pasted%20image%2020240604161651.png)  
+test  
+![](Pasted%20image%2020240604163456.png)
