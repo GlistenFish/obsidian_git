@@ -80,5 +80,9 @@ edit file tomcat/bin/catalina.sh to start remote monitor function
   
 ![](Pasted%20image%2020240604155150.png)  
   
-2. configure server  zabbix-java-gateway  
-first, yum install zabbix-java-gateway  
+2. configure server    
+yum install zabbix-java-gateway    
+configure zabbix-java-gateway
+![](Pasted%20image%2020240604160548.png)  
+configure /etc/zabbix/zabbix_server.con  
+![](Pasted%20image%2020240604160738.png)
