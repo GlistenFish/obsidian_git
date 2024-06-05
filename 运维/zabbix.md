@@ -132,7 +132,7 @@ warning: These two cannot be used at the same time (They achieve the same functi
 ![](Pasted%20image%2020240605183633.png)  
 ![](Pasted%20image%2020240605183716.png)  
   
-summery  
+#### summery  
 ![](Pasted%20image%2020240605191000.png)  
   
 ### Auto registration  
@@ -142,20 +142,16 @@ summery
 - 1. modify zabbix client configuration file
 - 2. set web page  
   
-1. modify zabbix client configuration file  
+1. modify zabbix client configuration file    
+  ![](Pasted%20image%2020240605194512.png)
+  ![](Pasted%20image%2020240605194614.png)
+  ![](Pasted%20image%2020240605194725.png)
+
+2. set web page  ![](Pasted%20image%2020240605193145.png)
+  ![](Pasted%20image%2020240605193453.png)
+  ![](Pasted%20image%2020240605193745.png)
   
+#### summary
   
+![](Pasted%20image%2020240605192422.png)![](Pasted%20image%2020240605193833.png)  
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-![](Pasted%20image%2020240605192422.png)
