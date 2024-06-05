@@ -116,7 +116,7 @@ warning: These two cannot be used at the same time (They achieve the same functi
 - auto register: client-active
   
 ### Auto discovery  
-### deployment process  
+#### deployment process  
 1. configure auto find rules
 2. enable auto discovery action  
   
@@ -134,3 +134,28 @@ warning: These two cannot be used at the same time (They achieve the same functi
   
 summery  
 ![](Pasted%20image%2020240605191000.png)  
+  
+### Auto registration  
+#### env prepration  
+![](Pasted%20image%2020240605192144.png)  
+#### deployment process  
+- 1. modify zabbix client configuration file
+- 2. set web page  
+  
+1. modify zabbix client configuration file  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+![](Pasted%20image%2020240605192422.png)
