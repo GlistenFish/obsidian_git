@@ -125,4 +125,8 @@ ok
   
 - enable auto discovery rules  
 ![](Pasted%20image%2020240605182400.png)  
-
+![](Pasted%20image%2020240605183336.png)  
+![](Pasted%20image%2020240605183603.png)  
+![](Pasted%20image%2020240605183618.png)  
+![](Pasted%20image%2020240605183633.png)  
+![](Pasted%20image%2020240605183716.png)  
