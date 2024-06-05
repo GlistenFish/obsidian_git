@@ -114,5 +114,15 @@ ok
 - auto add: server-active
 - auto register: client-active
   
-### Auto find  
-#### env preparation  
+### Auto discovery  
+### deployment process  
+1. configure auto find rules
+2. enable auto discovery action  
+  
+- configure auto discovery rules  
+![](Pasted%20image%2020240605181819.png)  
+![](Pasted%20image%2020240605181909.png)  
+  
+- enable auto discovery rules  
+![](Pasted%20image%2020240605182400.png)  
+
