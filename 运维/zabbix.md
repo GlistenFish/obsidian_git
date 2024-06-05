@@ -106,6 +106,7 @@ ok
 ### add hosts automaticly  
 - auto find
 - auto register  
+warning: These two cannot be used at the same time (They achieve the same function)
 
 | policy of auto-add |                                                                                        |                                                                      |
 | ------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
@@ -130,3 +131,6 @@ ok
 ![](Pasted%20image%2020240605183618.png)  
 ![](Pasted%20image%2020240605183633.png)  
 ![](Pasted%20image%2020240605183716.png)  
+  
+summery  
+![](Pasted%20image%2020240605191000.png)  
