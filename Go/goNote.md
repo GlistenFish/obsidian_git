@@ -60,5 +60,21 @@ func main() {
  5
   
 
+### 数组
+
+```go
+var arr0 = [4]bool{}  
+arr0[0] = true  
+fmt.Println(arr0)  
+  
+var arr1 = [...]int{}  
+fmt.Println(arr1)  
+  
+var arr2 = [...]int{1, 2, 3}  
+fmt.Println(arr2)  
+//arr2[4] = 1   error
+```
+>s
+
   
 
