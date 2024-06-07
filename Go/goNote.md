@@ -43,3 +43,22 @@ fmt.Println(len(text))
 ```  
 > 6
   
+### pointer  
+```go  
+package main  
+  
+import "fmt"  
+  
+func main() {  
+    var num1 int = 5  
+    var pointer *int = &num1  
+    fmt.Println(&num1)  
+    fmt.Println(*pointer)  
+}
+```  
+>0xc0000120b8
+ 5
+  
+
+  
+
