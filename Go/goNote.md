@@ -33,4 +33,13 @@ var text string
 text = "哈哈"  
 fmt.Printf("data type: %T", text[0])
 ```  
-> 
+> data type: uint8
+  
+### 中文字符长度为3  
+```go  
+var text string  
+text = "哈哈"  
+fmt.Println(len(text))
+```  
+> 6
+  
