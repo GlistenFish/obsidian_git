@@ -60,7 +60,7 @@ func main() {
  5
   
 
-### 数组
+### array
 
 ```go
 var arr0 = [4]bool{}  
@@ -95,7 +95,7 @@ func main() {
  arrPointer 的数据类型为: \*\[20\]int
 
   
-#### 切片类型
+### slice
 切片类型类似 `python` 里的列表类型，切片是对数组的抽象。Go 数组的长度不可改变，在特定场景中这样的集合就不太适用，Go 中提供了一种灵活，功能强悍的内置类型切片("动态数组")，与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。  
   
 format:  
@@ -132,10 +132,39 @@ func main() {
 
 切片加切片：  
 ```go  
-
+func main() {  
+    var slicenInt []int  
+    slicenInt = append(slicenInt, 1, 2, 3, 4)  //后插
+    fmt.Println(slicenInt)  
+    slicenInt = append(slicenInt, []int{5, 6, 7}...) //后插  
+    fmt.Println(slicenInt)  
+    slicenInt = append([]int{-2, -1, 0}, slicenInt...) //前插  
+    fmt.Println(slicenInt)  
+}
 ```
+>\[1 2 3 4]
+ \[1 2 3 4 5 6 7]
+ \[-2 -1 0 1 2 3 4 5 6 7]
+  
+⚠attention:  
+不要忘记末尾三个点  
+在切片开头添加元素时，无论添加多少个元素，都应将被添加的元素存放在一个切片中  
+  
+还可以用以下方法在切片的任意位置插入元素：  
+```go  
+func main() {  
+    var slicenInt []int  
+    slicenInt = append(slicenInt, 1, 2, 3, 4)  
+    fmt.Println(slicenInt)  
+    slicenInt = append(slicenInt[:2], append([]int{666, 777}, slicenInt[2:]...)...)  
+    fmt.Println(slicenInt)  
+}
+```
+>\[1 2 3 4]
+ \[1 2 666 777 3 4]  
+
+切片截取同 `python`    
+  
   
 
-切片截取同 `python`  
-  
   
