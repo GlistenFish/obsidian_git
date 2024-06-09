@@ -94,7 +94,10 @@ var b = map[string]string{
     "name":     "宗师",  
     "birthday": "10/10",  
     "gender":   "男",  
-}
+}  
+  
+// 删除键值  
+delete(a, "gender")  
 ```
 
 ### 常量

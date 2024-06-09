@@ -166,5 +166,47 @@ func main() {
 切片截取同 `python`    
   
   
-
+### set(map)  
+```go
+// 声明map集合变量  
+var a map[string]string  
+// 创建集合，前面只是声明并没有创建  
+a = make(map[string]string)  
+// 集合赋值  
+a["name"] = "大师"  
+a["birthday"] = "10/10"  
+a["gender"] = "男"  
   
+// 声明变量并且赋值  
+var b = map[string]string{  
+    "name":     "宗师",  
+    "birthday": "10/10",  
+    "gender":   "男",  
+}  
+  
+// 删除键值  
+delete(a, "gender")  
+```
+  
+### structure
+```go  
+package main  
+  
+type people struct {  
+    name string  
+    age  int  
+}  
+  
+func main() {  
+    //定义时直接赋值  
+    var a = people{  
+       name: "Alice",  
+       age:  13,  
+    }  
+  
+    // 先定义后赋值  
+    var b = people{}  
+    b.name = "John"  
+    b.age = 18  
+}
+```
