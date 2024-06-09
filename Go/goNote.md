@@ -213,5 +213,13 @@ func main() {
   
 ### 案例：九九乘法表  
 ```go  
-
-```
+func main() {  
+    for y := 1; y <= 9; y++ {  
+       for x := 1; x <= y; x++ {  
+          fmt.Printf("%d*%d=%2.d ", x, y, x*y)  
+       }  
+       fmt.Println()  
+    }  
+}
+```  
+  
