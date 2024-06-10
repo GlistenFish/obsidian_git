@@ -443,3 +443,48 @@ func main() {
 }
 ```  
   
+## 异常  
+### 宕机时恢复  
+下面演示如何捕获手动触发的异常，并从异常中恢复程序的运行  
+```go  
+func main() {  
+    fmt.Println("Start")  
+    defer func() {  
+       err := recover()  
+       if err == "设备拔出" {  
+          fmt.Println("设备拔出，请重新插入")  
+       }  
+    }()  
+    panic("设备拔出")  
+}
+```  
+  
+```result  
+Start
+设备拔出，请重新插入
+```  
+  
+```go  
+func main() {  
+    fmt.Println("Start")  
+    defer func() {  
+       err := recover()  
+       fmt.Println(err)  
+    }()  
+    numA := []int{}  
+    fmt.Println(numA[5])  
+}
+```  
+  
+```result  
+Start
+runtime error: index out of range [5] with length 0  
+
+Process finished with the exit code 0
+```  
+  
+### 案例：面积计算器    
+计算面积，同时，需要使用函数封装具体的计算逻辑，并最终返回结果。当用户输入错误的数据（如负数）时，应当能够避免程序崩毁斌够给出提示（手动触发宕机和恢复）
+```go  
+
+```
