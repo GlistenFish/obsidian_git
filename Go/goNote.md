@@ -1,4 +1,4 @@
-# basic gramma  
+# basic grammer  
 ### 常量生成器 iota  
 使用关键字 `iota` 可以为批量常量进行连续增1赋值，iota 初始值为0
 keyword `iota`    
@@ -486,5 +486,70 @@ Process finished with the exit code 0
 ### 案例：面积计算器    
 计算面积，同时，需要使用函数封装具体的计算逻辑，并最终返回结果。当用户输入错误的数据（如负数）时，应当能够避免程序崩毁斌够给出提示（手动触发宕机和恢复）
 ```go  
+func main() {  
+    var width float64 = 12  
+    var height float64 = 14  
+    defer func() {  
+       err := recover()  
+       if err != nil {  
+          fmt.Println(err)  
+       }  
+    }()  
+    if width < 0 || height < 0 {  
+       panic("should be positive number")  
+    }  
+    fmt.Println("area: ", width*height)  
+}
+```  
+  
+# structure  
+## 类型  
+- 自定义类型：  
+```go  
+func main() {  
+    type NewInt int  
+    var intNum NewInt = 10  
+    fmt.Println("intNum:", intNum, "Type:", reflect.TypeOf(intNum))  
+}
+```  
+  
+```result  
 
-```
+```  
+  
+- 自定义别名    
+>在 go 语言中，除了可以自定义类型，还可以自定义某个自带类型的别名。这种通过“起别名”的方式实现的自定义类型，其本质还是自带类型，这个别名仅存在与代码中，一旦完成编译，别名就不再存在
+```go  
+func main() {  
+    type NewInt = int  
+    var intNum NewInt = 10  
+    fmt.Println("intNum:", intNum, "Type:", reflect.TypeOf(intNum))  
+}
+```  
+  
+```result  
+intNum: 10 Type: main.NewInt
+```  
+  
+### 匿名结构体  
+```go  
+func main() {  
+    book01 := struct {  
+       title   string  
+       author  string  
+       subject string  
+    }{  
+       title:   "Let's Go",  
+       author:  "Alex",  
+       subject: "Go is xxx",  
+    }  
+    fmt.Println(book01)  
+    fmt.Println(reflect.TypeOf(book01))  
+}
+```  
+  
+```result  
+{Let's Go Alex Go is xxx}
+struct { title string; author string; subject string }
+```  
+  
