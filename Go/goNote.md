@@ -351,3 +351,95 @@ func accumulate(value int) func() int {
 104
 ```  
   
+## 函数的延迟调用  
+key: defer  
+当有多个 defer 行为时，这些行为将以逆序的方式执行  
+```go  
+func main() {  
+    fmt.Println("defer start")  
+    defer fmt.Println("opration01")  
+    defer fmt.Println("opration02")  
+    defer fmt.Println("opration03")  
+    fmt.Println("defer end")  
+}
+```  
+  
+```result  
+defer start
+defer end
+opration03
+opration02
+opration01
+```  
+  
+Features:    
+- defer 行为的实际执行顺序与代码定义的顺序是相反的
+- 所有的 defer 行为将在整个**函数体**执行结束后执行（即使发生宕机也会执行）  
+### 案例  
+1. defer 表达式与函数返回  
+```go  
+func main() {  
+    i := 0  
+    defer fmt.Println(i)  
+    i++  
+    fmt.Println(i)  
+    return  
+}
+```  
+  
+```result  
+1  
+0
+```  
+  
+2. derfer 表达式与闭包  
+```go  
+func main() {  
+    fmt.Println(funcA())  
+}  
+  
+func funcA() (numA int) {  
+    defer func() {  
+       numA++  
+    }()  
+    return 0  
+}
+```  
+  
+```result    
+1
+```  
+  
+3. 在循环体中的 defer 表达式  
+```go  
+func main() {  
+    numArr := []int{1, 2, 3, 4, 5}  
+    for _, value := range numArr {  
+       defer fmt.Println(value)  
+    }  
+    fmt.Println("function start")  
+}
+```  
+  
+```result  
+function start  
+5
+4
+3
+2
+1
+```
+
+4. 在循环体中的 defer 表达式与闭包  
+```go  
+func main() {  
+    numArr := []int{1, 2, 3, 4, 5}  
+    for _, value := range numArr {  
+       defer func() {  
+          fmt.Println(value)  
+       }()  
+    }  
+    fmt.Println("function start") 
+}
+```  
+  
