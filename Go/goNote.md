@@ -253,5 +253,101 @@ func main() {
   
 ```result  
 [-10 0 6 15 24 45 78 100 113 205]
+```    
+  
+  
+  
+# function  
+  
+## 匿名函数  
+  
+### 将匿名函数赋值给变量  
+```go  
+func main() {  
+    functionA := func(str1 string) {  
+       fmt.Println(str1)  
+    }  
+  
+    functionA("Hello World")  
+    functionA("I'm Glisten")  
+}
+```    
+
+```result  
+func main() {  
+    functionA := func(str1 string) {  
+       fmt.Println(str1)  
+    }  
+  
+    functionA("Hello World")  
+    functionA("I'm Glisten")  
+}
+```  
+  
+### 案例：“下载神器”  
+```go  
+func main() {  
+    download(func(progress int) {  
+       fmt.Printf("Current progress: %d%%\n", progress)  
+    })  
+}  
+  
+func download(output func(progress int)) {  
+    value := 0  
+    for {  
+       output(value)  
+       value++  
+       if value > 100 {  
+          break  
+       }  
+       time.Sleep(1 * time.Second)  
+    }  
+}
+```
+
+## 闭包    
+  
+在 go 语言中闭包是指函数体内使用管理自由变量的函数，被使用的自由变量和函数一同存在。即使已经离开了自由变量的环境，自由变量也不会被释放或删除，且在闭包中可以继续使用这个变量。因此，可以说闭包为函数带来了 “记忆效应”。
+```go  
+func main() {  
+    accumulator := accumulate(1)  
+    fmt.Println(accumulator())  
+    fmt.Println(accumulator())  
+    fmt.Println(accumulator())  
+    accumulator2 := accumulate(10)  
+    fmt.Println(accumulator2())  
+    fmt.Println(accumulator2())  
+    fmt.Println(accumulator2())  
+    accumulator3 := accumulate(100)  
+    fmt.Println(accumulator3())  
+    fmt.Println(accumulator3())  
+    fmt.Println(accumulator3())  
+    // 再次通过每个变量调用各自的函数  
+    fmt.Println(accumulator())  
+    fmt.Println(accumulator2())  
+    fmt.Println(accumulator3())  
+}  
+  
+func accumulate(value int) func() int {  
+    return func() int {  
+       value++  
+       return value  
+    }  
+}
+```  
+  
+```result  
+2
+3
+4
+11
+12
+13
+101
+102
+103
+5
+14
+104
 ```  
   
