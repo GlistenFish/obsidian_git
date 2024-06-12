@@ -589,5 +589,86 @@ func main() {
 
 在 go 语言中，也有方法（Method）的概念。它作用于结构体中特定字段的函数，这些字段变量称为接收者（Receiver）
 ```go  
+type Cat struct {  
+    gender int  
+    color  string  
+    name   string  
+}  
+  
+func newCat(gender int, color string, name string) *Cat {  
+    return &Cat{gender: gender, color: color, name: name}  
+}  
+  
+func (catInstance *Cat) eat(food string) {  
+    fmt.Println(catInstance.name, "eating:", food)  
+}  
+  
+func (catInstance *Cat) dream() {  
+    fmt.Println(catInstance.name, "dreaming...")  
+}  
+  
+func (catInstance *Cat) mewing() {  
+    fmt.Println(catInstance.name, "mewing~mewing~mewing~")  
+}  
+  
+func (catInstance *Cat) reanme(newName string) {  
+    catInstance.name = newName  
+}  
+  
+func main() {  
+    cat01 := newCat(0, "blue", "CoolCat")  
+    fmt.Println(cat01)  
+    fmt.Println(reflect.TypeOf(cat01))  
+  
+    cat01.eat("fish")  
+    cat01.dream()  
+    cat01.mewing()  
+    cat01.reanme("Kaka")  
+    fmt.Println(cat01.name)  
+}
+```  
+  
+```result  
+*main.Cat
+CoolCat eating: fish
+CoolCat dreaming...
+CoolCat mewing~mewing~mewing~
+```  
+  
+tip：  
+这里  
+```  
+func (catInstance *Cat) reanme(newName string) {  
+    catInstance.name = newName  
+}  
+```  
+Cat 为什么要用指针的方式呢？如果不用指针的方式，rename()方法中的变量与实例中的变量就不是同一个变量，在方法中改 name 属性就不会更改实例的 name 属性  
+  
+ps：  
+在 Go 语言中，开发者还可以为任意类型添加方法，不限于结构体。如  
+```go  
+type MyString string  
+	func (name MyString)A whoAmI() {  
+	fmt.Println("My name is: ", name)  
+}  
+func main() {  
+	var me MyString="Kaka"
+	me.whoAmI()
+}
+```  
+  
+  
+## 结构体嵌套  
+  
+### 嵌套结构体  
+```go  
 
 ```
+  
+### 嵌套匿名结构体  
+  
+  
+### 使用结构体实现继承  
+  
+  
+## 案例：Kaka 开银行
