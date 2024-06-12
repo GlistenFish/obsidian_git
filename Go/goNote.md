@@ -1,4 +1,4 @@
-# basic grammer  
+# Basic Grammer  
 ### 常量生成器 iota  
 使用关键字 `iota` 可以为批量常量进行连续增1赋值，iota 初始值为0
 keyword `iota`    
@@ -257,7 +257,7 @@ func main() {
   
   
   
-# function  
+# Function  
   
 ## 匿名函数  
   
@@ -502,7 +502,7 @@ func main() {
 }
 ```  
   
-# structure  
+# Structure  
 ## 类型  
 - 自定义类型：  
 ```go  
@@ -743,5 +743,80 @@ LittleR miaomiao
 
 ## 案例：Kaka 开银行  
 ```go  
-
-```
+package main  
+  
+import "fmt"  
+  
+var totalBalance float64 = 10000  
+  
+type Customer struct {  
+    Name    string  
+    Balance float64  
+}  
+  
+func (customerInstance *Customer) deposit(money float64) {  
+    customerInstance.Balance += money  
+    totalBalance += money  
+    fmt.Println(customerInstance.Name, "deposits", money)  
+    fmt.Println(customerInstance.Name, "Customer Balance:", customerInstance.Balance)  
+    fmt.Println("Bank savings:", totalBalance)  
+}  
+  
+func (customerInstance *Customer) withdraw(money float64) {  
+    fmt.Println(customerInstance.Name, "wants to withdraws", money)  
+    if customerInstance.Balance < money {  
+       fmt.Println("Insufficient account balance")  
+    } else if totalBalance < money {  
+       fmt.Println("Insufficient bank savings")  
+    } else {  
+       customerInstance.Balance -= money  
+       totalBalance -= money  
+       fmt.Println(customerInstance.Name, "withdraw", money)  
+       fmt.Println(customerInstance.Name, "Current account balance is", customerInstance.Balance)  
+       fmt.Println("Current bank savings is", totalBalance)  
+    }  
+}  
+  
+func main() {  
+    var customerA Customer  
+    customerA.Name = "DepositorA"  
+    customerA.Balance = 2000  
+    var customerB Customer  
+    customerB.Name = "DepositorB"  
+    customerB.Balance = 3000  
+    var customerC Customer  
+    customerC.Name = "DepositorC"  
+    customerC.Balance = 5000  
+  
+    customerA.deposit(5000)  
+    customerC.withdraw(3000)  
+    customerB.withdraw(4000)  
+    customerA.deposit(6000)  
+    customerB.deposit(2000)  
+    customerC.deposit(500)  
+}
+```  
+  
+```result  
+DepositorA deposits 5000
+DepositorA Customer Balance: 7000
+Bank savings: 15000
+DepositorC wants to withdraws 3000
+DepositorC withdraw 3000
+DepositorC Current account balance is 2000
+Current bank savings is 12000
+DepositorB wants to withdraws 4000
+Insufficient account balance
+DepositorA deposits 6000
+DepositorA Customer Balance: 13000
+Bank savings: 18000
+DepositorB deposits 2000
+DepositorB Customer Balance: 5000
+Bank savings: 20000
+DepositorC deposits 500
+DepositorC Customer Balance: 2500
+Bank savings: 20500
+```  
+  
+# Interface  
+  
