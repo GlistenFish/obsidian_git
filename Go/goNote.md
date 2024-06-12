@@ -702,7 +702,43 @@ func main() {
 ### 使用结构体实现继承  
 Go 语言中没有类的概念，自然也就没有继承的概念。但是开发者通过对结构体的合理嵌套，可以实现继承的效果。  
 ```go  
-
-```
+type Cat struct {  
+    eyeColor string  
+    animal   *Animal  
+}  
   
+func (catInstance Cat) mewing() {  
+    fmt.Println(catInstance.animal.name, "miaomiao")  
+}  
+  
+type Dog struct {  
+    bodyColor string  
+    animal    *Animal  
+}  
+  
+func (dogInstance Dog) bowwow() {  
+    fmt.Println(dogInstance.animal.name, "wangwang")  
+}  
+  
+type Animal struct {  
+    name string  
+}  
+  
+func main() {  
+    dog01 := &Dog{bodyColor: "blue", animal: &Animal{"LittleB"}}  
+    fmt.Println(dog01.animal.name, "body color is", dog01.bodyColor)  
+    dog01.bowwow()  
+    cat01 := &Cat{eyeColor: "red", animal: &Animal{"LittleR"}}  
+    fmt.Println(cat01.animal.name, "eyes color are", cat01.eyeColor)  
+    cat01.mewing()  
+}
+```  
+
+  ```result
+LittleB body color is blue
+LittleB wangwang
+LittleR eyes color are red
+LittleR miaomiao
+  ```
+
 ## 案例：Kaka 开银行
