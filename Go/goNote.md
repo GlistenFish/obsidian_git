@@ -553,3 +553,10 @@ func main() {
 struct { title string; author string; subject string }
 ```  
   
+## 构造函数与方法    
+  
+某些其他面向对象的语言具有实体类及其构造函数与方法，但是 Go 语言没有。而借助结构体，开发者可以自己实现构造函数与方法。
+### 使用结构体实现构造函数   
+```go  
+
+```
