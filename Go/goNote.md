@@ -558,5 +558,36 @@ struct { title string; author string; subject string }
 某些其他面向对象的语言具有实体类及其构造函数与方法，但是 Go 语言没有。而借助结构体，开发者可以自己实现构造函数与方法。
 ### 使用结构体实现构造函数   
 ```go  
+type Cat struct {  
+    gender int  
+    color  string  
+    name   string  
+}  
+  
+func newCat(gender int, color string, name string) *Cat {  
+    return &Cat{  
+       gender: gender,  
+       color:  color,  
+       name:   name}  
+}  
+func main() {  
+    cat01 := newCat(0, "blue", "Kaka")  
+    fmt.Println(cat01)  
+    fmt.Println(reflect.TypeOf(cat01))  
+}
+```  
+  
+```result  
+&{0 blue Kaka}
+*main.Cat
+
+```  
+>tip:
+>在 newCat()函数中构建函数体实例时，最好返回结构体指针。若返回整个实例，则会执行一次值传递。值传递的性能会随着结构体本身的复杂度发生变化，结构体越复杂，值传递的性能就越差。而直接返回实例的内存地址则跳过了实例的值传递，这对于运行性能的提升是很有帮助的。
+  
+### 方法与接受者    
+
+在 go 语言中，也有方法（Method）的概念。它作用于结构体中特定字段的函数，这些字段变量称为接收者（Receiver）
+```go  
 
 ```
