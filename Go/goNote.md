@@ -662,13 +662,47 @@ func main() {
   
 ### 嵌套结构体  
 ```go  
-
+type Cat struct {  
+    name     string  
+    bodyInfo BodyInfo  
+}  
+  
+type BodyInfo struct {  
+    weight float64  
+    color  string  
+}  
+  
+func main() {  
+    cat01 := Cat{"Kaka", BodyInfo{60, "red"}}  
+    fmt.Println("My name is", cat01.name, ", weight is", cat01.bodyInfo.weight, ", color is", cat01.bodyInfo.color)  
+}
 ```
   
 ### 嵌套匿名结构体  
+```go    
+type Cat struct {  
+    name     string  
+    bodyInfo BodyInfo  
+}  
   
+type BodyInfo struct {  
+    weight float64  
+    color  string  
+}  
+  
+func main() {  
+    var cat01 Cat  
+    cat01.name = "Kaka"  
+    cat01.bodyInfo.weight = 10  
+    cat01.bodyInfo.color = "green"  
+    fmt.Println("My name is", cat01.name, ", weight is", cat01.bodyInfo.weight, ", color is", cat01.bodyInfo.color)  
+}
+```
   
 ### 使用结构体实现继承  
-  
+Go 语言中没有类的概念，自然也就没有继承的概念。但是开发者通过对结构体的合理嵌套，可以实现继承的效果。  
+```go  
+
+```
   
 ## 案例：Kaka 开银行
