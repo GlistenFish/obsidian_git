@@ -820,3 +820,43 @@ Bank savings: 20500
   
 # Interface  
   
+Demo:  
+```go  
+package main  
+  
+import (  
+    "fmt"  
+)  
+  
+type Sayer interface {  
+    say()  
+}  
+  
+type Cat struct{}  
+  
+func (catInstance Cat) say() {  
+    fmt.Println("miaomiao")  
+}  
+  
+type Dog struct{}  
+  
+func (dogInstance Dog) say() {  
+    fmt.Println("wangwang")  
+}  
+  
+func main() {  
+    var anyAnimalSayer Sayer  
+    c := Cat{}  
+    anyAnimalSayer = c  
+    anyAnimalSayer.say()  
+    d := Dog{}  
+    anyAnimalSayer = d  
+    anyAnimalSayer.say()  
+}
+```  
+  
+```result  
+miaomiao
+wangwang
+```  
+  
