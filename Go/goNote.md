@@ -166,7 +166,7 @@ func main() {
 切片截取同 `python`    
   
   
-### set(map)  
+### map  
 ```go
 // 声明map集合变量  
 var a map[string]string  
@@ -858,5 +858,48 @@ func main() {
 ```result  
 miaomiao
 wangwang
+```  
+  
+### 空接口  
+```go
+type EmptyInterface interface{}  
+  
+func main() {  
+    var emptyInterface EmptyInterface  
+    strVar := "Kaka"  
+    emptyInterface = strVar  
+    fmt.Println(emptyInterface)  
+    fmt.Println(reflect.TypeOf(emptyInterface))  
+  
+    numVar := 18  
+    emptyInterface = numVar  
+    fmt.Println(emptyInterface)  
+    fmt.Println(reflect.TypeOf(numVar))  
+}
+```  
+  
+```result  
+Kaka
+string
+18
+int
+```  
+  
+利用这个特点，可以轻松打破对数据类型的限制。比如，集合（Map）类型要求明确定义键的类型和值的类型。而利用空接口可以打破对值的类型的限制。  
+```go
+type EmptyInterface interface {  
+}  
+  
+func main() {  
+    var animalInfo = make(map[string]EmptyInterface)  
+    animalInfo["name"] = "Kaka"  
+    animalInfo["age"] = 3  
+    animalInfo["married"] = false  
+    fmt.Println(animalInfo)  
+}
+```  
+  
+```result  
+map[age:3 married:false name:Kaka]
 ```  
   
