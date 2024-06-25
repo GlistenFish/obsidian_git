@@ -1,15 +1,16 @@
-# TCP/IP 面试题  
+# 网络  
+## TCP/IP 面试题  
 [TCP/IP协议常见面试题](https://blog.csdn.net/qq_41696018/article/details/124249818)
 [计算机TCP/IP面试10连问，你能顶住几道?](https://zhuanlan.zhihu.com/p/357930679)  
 [TCP/IP计算机网络协议面试题汇总](https://zhuanlan.zhihu.com/p/624875367) ***
   
   
-# http 协议面试题  
+## http 协议面试题  
 [100% 的面试官都会问的HTTP面试题](https://zhuanlan.zhihu.com/p/135947893)  
 [硬核！30 张图解 HTTP 常见的面试题](https://zhuanlan.zhihu.com/p/112010468)    
   
   
-# OSPF 路由协议        
+## OSPF 路由协议        
         
 video: [十分钟理解OSPF路由协议 路由技术基础](https://www.bilibili.com/video/BV1YV41127U5/)
   
@@ -32,7 +33,7 @@ RIP 协议缺陷：
 	4. 收敛速度慢  
   
 <<<<<<< HEAD
-## OSPF 协议工作过程：      
+### OSPF 协议工作过程：      
     
 1.发现邻居    
 2.建立邻接关系    
@@ -55,7 +56,7 @@ OSPF 分区域管理
 
   
   
-# 快问快答  
+## 快问快答  
   
 TCP 和 UDP 的区别？  
 使用 VLAN 的好处？  
@@ -68,3 +69,35 @@ OSPF 协议，邻接表
   
 
 
+# Linux  
+## 小问答  
+- 关闭Linux系统不重启用什么命令
+  关机 shutdown -h
+  重启 shutdown -s
+- 数据库备份如何使用？
+  mysqldump
+- 压缩文件如何创建和解压？
+  tar
+  -x gz
+  -j bzip2
+  -J xz
+- 常见的端口Web服务和数据库
+  3306 mysql
+  1433 sqlserver
+  6379 redis
+  21 22 23 ftp ssh telnet
+  
+- 常见的linux日志文件和路径
+- 常见的进程管理命令
+- 内核子系统有哪些？操作系统的主要功能？
+- 系统的运行级别，默认的运行级别是？
+- 虚拟化，完全虚拟化，半虚拟化，docker
+- docker常用命令，例如开启所有容器，删除所有镜像，复制文件到容器内
+- 写一个脚本，每5分钟判断一次SSH登陆失败超过10次的IP
+- 解释一下什么是分布式部署，负载均衡，反向代理
+- 对云原生的理解
+  
+  
+作者：木木在  
+链接：[https://www.nowcoder.com/discuss/490273364582395904?sourceSSR=search](https://www.nowcoder.com/discuss/490273364582395904?sourceSSR=search)  
+来源：牛客网
