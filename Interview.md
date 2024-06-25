@@ -56,7 +56,7 @@ OSPF 分区域管理
 
   
   
-## 快问快答  
+# 快问快答  
   
 TCP 和 UDP 的区别？  
 使用 VLAN 的好处？  
@@ -102,7 +102,11 @@ OSPF 协议，邻接表
 - 解释一下什么是分布式部署，负载均衡，反向代理
 - 对云原生的理解
   
-  
-作者：木木在  
-链接：[https://www.nowcoder.com/discuss/490273364582395904?sourceSSR=search](https://www.nowcoder.com/discuss/490273364582395904?sourceSSR=search)  
-来源：牛客网
+    
+### Docker 容器有几种状态？
+
+- starting 运行状态
+- Exited 退出状态
+- Paused 暂停状态
+- healthy 健康状态
+- unhealthy 非健康状态
