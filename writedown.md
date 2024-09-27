@@ -133,7 +133,11 @@ sudo docker run -d -p 13000:3000 -e OPENAI_API_KEY="API-KEY" -e BASE_URL=https:/
   
 # 字符编码和二进制的关系  
   
-> - ascii 编码，256
+> - ascii 编码
+> - gb2312，包含中文，但不包含其他一些语言
+> - gbk 中文和亚洲一些国家
+> - unicode，分为 ucs2和 ucs4，ucs2占2个字节，ucs4占4个
+> - utf-8，都用 ucs4占空间过多，utf-8用尽量少的空间来表示 (中文占3字节)
   
   
   
