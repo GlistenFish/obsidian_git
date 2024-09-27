@@ -125,7 +125,15 @@ sudo docker run -d -p 13000:3000 -e OPENAI_API_KEY="API-KEY" -e BASE_URL=https:/
   
 ### 热key  
   
-**什么是热Key呢**？在Redis中，我们把访问频率高的key，称为热点key。  
+**什么是热Key呢**？在Redis中，我们把访问频率高的key，称为热点key。    
+  
+  
+  
+  
+  
+# 字符编码和二进制的关系  
+  
+> - ascii 编码，256
   
   
   
