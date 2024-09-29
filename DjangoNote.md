@@ -1,4 +1,4 @@
-# 1. 创建 django 项目    
+#  1. 创建 django 项目    
   
 tree:
 ```tree  
