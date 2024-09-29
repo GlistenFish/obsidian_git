@@ -30,8 +30,16 @@ python .\manage.py startapp app01
 ![](Pasted%20image%2020240927114104.png)  
   
   
-# 创建数据库  
+# 创建数据库    
   
+```powershell  
+pip install pymysql
+```  
+  
+![](Pasted%20image%2020240929152522.png)  
+  
+写  
+
 ![](Pasted%20image%2020240929151836.png)  
   
 执行两条命令：  
