@@ -52,3 +52,7 @@ python manager.py makemigrations
 python manager.py migrate
 ```  
   
+启动django  
+```powershell  
+python manage.py runserver
+```
